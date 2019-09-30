@@ -5,7 +5,7 @@ body {
 }
 body {
   background-color: #16161C;
-  padding: 30px 80px;
+  padding: 30px;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   color: #FFFFFF;
 }
@@ -28,7 +28,7 @@ a:active {
 .servers {
   display: flex;
   flex-flow: row wrap;
-  margin: 20px -20px;
+  margin: 20px 0;
   background-color: #1D1D24;
   border: 1px solid #31313B;
   border-radius: 4px;
