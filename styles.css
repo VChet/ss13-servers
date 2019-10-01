@@ -9,22 +9,6 @@ body {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   color: #FFFFFF;
 }
-a {
-  display: inline-block;
-  text-decoration: inherit;
-  background-color: #2C2C36;
-  padding: 10px;
-  margin: 5px;
-  border-radius: 4px;
-  color: #CACACA;
-  transition: background-color .3s;
-}
-a:hover {
-  background-color: #31313B;
-}
-a:active {
-  transform: translateY(1px);
-}
 .servers {
   display: flex;
   flex-flow: row wrap;
@@ -50,6 +34,22 @@ a:active {
 }
 .servers__block h2 {
   text-align: center;
+}
+a {
+  display: inline-block;
+  text-decoration: inherit;
+  background-color: #23232D;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 4px;
+  color: #CACACA;
+  transition: background-color .3s;
+}
+a:hover {
+  background-color: #31313B;
+}
+a:active {
+  transform: translateY(1px);
 }
 .servers__play {
   display: block;
