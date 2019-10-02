@@ -48,6 +48,11 @@ body {
   flex-flow: column nowrap;
   align-items: center;
 }
+.servers__block--disabled {
+  background-color: #241D1dE1;
+  border: 1px solid #3B3131;
+  opacity: .5;
+}
 .servers__block h2 {
   text-align: center;
 }
@@ -71,4 +76,7 @@ a:active {
   display: block;
   max-width: 300px;
   border: 1px solid rgb(70, 110, 110);
+}
+.servers__block--disabled .servers__play {
+  display: none;
 }
