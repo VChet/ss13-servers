@@ -35,4 +35,7 @@ const updateTauServers = function() {
 
 document.addEventListener("DOMContentLoaded", function() {
   updateTauServers();
+  setInterval(() => {
+    updateTauServers();
+  }, 2 * 60 * 1000); // every 2 minutes
 });
