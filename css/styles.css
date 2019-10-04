@@ -79,6 +79,13 @@ body {
   width: 100%;
   text-align: center;
 }
+.servers__block .servers__data {
+  width: 100%;
+  text-align: center;
+  line-height: 28px;
+  padding-bottom: 10px;
+  color: #CACACA;
+}
 .servers__block--disabled {
   background-color: #241D1dE1;
   border: 1px solid #3B3131;
