@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');
 html,
 body {
   padding: 0;
@@ -5,7 +6,8 @@ body {
 }
 body {
   background: #000000 url("stars.png") repeat top center;
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-family: "Exo 2", "Open Sans", sans-serif;
+  font-size: 18px;
   color: #FFFFFF;
 }
 .container {
