@@ -118,6 +118,6 @@ a:active {
   max-width: 300px;
   border: 1px solid rgb(70, 110, 110);
 }
-.servers__block--disabled .servers__play {
+.servers__block--disabled a {
   display: none;
 }
