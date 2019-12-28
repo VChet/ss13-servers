@@ -22,7 +22,7 @@ const getServerData = function(url, blockId) {
   getJSON(url, function(error, data) {
     if (error) return console.error({ error });
     const dataBlock = document.querySelector(blockId);
-    dataBlock.querySelector(".servers__mode").innerText = `${data.map} (${data.mode})`;
+    dataBlock.querySelector(".servers__mode").innerText = `${data.map_name} (${data.mode})`;
     dataBlock.querySelector(".servers__players").innerText = `${data.players} ${declOfNum(data.players, ["игрок", "игрока", "игроков"])}`;
     dataBlock.querySelector(".servers__roundTime").innerText = `Продолжительность: ${data.roundduration}`;
   });
