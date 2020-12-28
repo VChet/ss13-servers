@@ -3,9 +3,10 @@
   import { onMount } from "svelte";
 
   import Server from "./Server.svelte";
+  import type { ServerModel } from "./types/Server";
 
-  let tauServers: Array<any> = [];
-  let ss220Servers: Array<any> = [
+  let tauServers: Array<ServerModel> = [];
+  let ss220Servers: Array<ServerModel> = [
     {
       name: "Paradise",
       url: "byond://rv666.asuscomm.com:7721",
@@ -15,7 +16,7 @@
       url: "byond://rv666.asuscomm.com:7722",
     },
   ];
-  let onyxServers: Array<any> = [
+  let onyxServers: Array<ServerModel> = [
     {
       name: "Chaotic Onyx",
       description:

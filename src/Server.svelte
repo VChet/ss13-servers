@@ -1,5 +1,7 @@
 <script lang="ts">
-  export let data: any;
+  import type { ServerModel } from "./types/Server";
+
+  export let data: ServerModel;
 
   const pluralize = function (number: number, titles: Array<string>) {
     const cases = [2, 0, 1, 1, 1, 2];
