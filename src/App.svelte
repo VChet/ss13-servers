@@ -1,23 +1,63 @@
 <script lang="ts">
+  import axios from "axios";
   import { onMount } from "svelte";
 
-  const getJSON = function (url: string, callback: Function) {
-    const xhr = new XMLHttpRequest();
-    xhr.open("GET", url, true);
-    xhr.responseType = "json";
-    xhr.onload = function () {
-      var status = xhr.status;
-      if (status === 200) {
-        callback(null, xhr.response);
-      } else {
-        callback(status, xhr.response);
-      }
-    };
-    xhr.send();
-  };
+  let tauServers: Array<any> = [];
 
-  const declOfNum = function (number: number, titles: Array<string>) {
-    if (!number) return "--";
+  async function fetchTauServers() {
+    tauServers = [];
+    try {
+      await axios
+        .get("https://taucetistation.org/server/tauceti/json")
+        .then(({ data }) => {
+          tauServers = [
+            ...tauServers,
+            {
+              name: "Tau Ceti Classic",
+              map: data.map_name,
+              mode: data.mode,
+              players: data.players,
+              duration: data.roundduration,
+              url: "byond://game.taucetistation.org:2506",
+            },
+          ];
+        });
+      await axios
+        .get("https://taucetistation.org/server/tauceti2/json")
+        .then(({ data }) => {
+          tauServers = [
+            ...tauServers,
+            {
+              name: "Tau Ceti Classic II",
+              map: data.map_name,
+              mode: data.mode,
+              players: data.players,
+              duration: data.roundduration,
+              url: "byond://game.taucetistation.org:2507",
+            },
+          ];
+        });
+      await axios
+        .get("https://taucetistation.org/server/tauceti3/json")
+        .then(({ data }) => {
+          tauServers = [
+            ...tauServers,
+            {
+              name: "Tau Ceti Classic III",
+              map: data.map_name,
+              mode: data.mode,
+              players: data.players,
+              duration: data.roundduration,
+              url: "byond://game.taucetistation.org:2508",
+            },
+          ];
+        });
+    } catch ({ response }) {
+      console.error(response);
+    }
+  }
+
+  const pluralize = function (number: number, titles: Array<string>) {
     const cases = [2, 0, 1, 1, 1, 2];
     const text =
       titles[
@@ -28,43 +68,16 @@
     return `${number} ${text}`;
   };
 
-  const getServerData = function (url: string, blockId: string) {
-    getJSON(url, function (error, data) {
-      if (error) return console.error({ error });
-      const dataBlock: Element = document.querySelector(blockId);
-
-      let map: string = "ERROR";
-      if (data.map_name) map = `${data.map_name} (${data.mode})`;
-      dataBlock.querySelector(".servers__mode").innerText = map;
-
-      dataBlock.querySelector(
-        ".servers__players"
-      ).innerText = declOfNum(data.players, ["игрок", "игрока", "игроков"]);
-
-      dataBlock.querySelector(
-        ".servers__roundTime"
-      ).innerText = `Продолжительность: ${data.roundduration || "--:--"}`;
-    });
-  };
-
-  function updateTauServers(): void {
-    getServerData("https://taucetistation.org/server/tauceti/json", "#TC1");
-    getServerData("https://taucetistation.org/server/tauceti2/json", "#TC2");
-    getServerData("https://taucetistation.org/server/tauceti3/json", "#TC3");
-  }
-
   onMount(() => {
-    updateTauServers();
+    fetchTauServers();
     setInterval(() => {
-      updateTauServers();
+      fetchTauServers();
     }, 10 * 60 * 1000); // every 10 minutes
   });
 </script>
 
 <div class="stars" />
 <main class="container">
-  <script src="./scripts.js">
-  </script>
   <section class="servers">
     <div class="servers__header">
       <h2>Tau Ceti</h2>
@@ -92,41 +105,33 @@
         href="https://wiki.taucetistation.org/Music"
         target="_blank"
         rel="noreferrer">Музыка</a>
-      <a on:click={updateTauServers}>🔄</a>
+      <a on:click={fetchTauServers}>🔄</a>
     </div>
-    <div class="servers__block">
-      <h3>Tau Ceti Classic</h3>
-      <div class="servers__data" id="TC1">
-        <div class="servers__mode" />
-        <div class="servers__players" />
-        <div class="servers__roundTime" />
+    {#each tauServers as server}
+      <div class="servers__block">
+        <h3>{server.name}</h3>
+        <div class="servers__data">
+          <div class="servers__mode">
+            {#if server.map && server.mode}
+              {server.map}
+              ({server.mode})
+            {:else}ERROR{/if}
+          </div>
+          <div class="servers__players">
+            {server.players ? pluralize(server.players, [
+                  'игрок',
+                  'игрока',
+                  'игроков',
+                ]) : '--'}
+          </div>
+          <div class="servers__roundTime">
+            Продолжительность:
+            {server.duration || '--:--'}
+          </div>
+        </div>
+        <a class="servers__play" href={server.url}>Играть</a>
       </div>
-      <a
-        class="servers__play"
-        href="byond://game.taucetistation.org:2506">Играть</a>
-    </div>
-    <div class="servers__block">
-      <h3>Tau Ceti Classic II</h3>
-      <div class="servers__data" id="TC2">
-        <div class="servers__mode" />
-        <div class="servers__players" />
-        <div class="servers__roundTime" />
-      </div>
-      <a
-        class="servers__play"
-        href="byond://game.taucetistation.org:2507">Играть</a>
-    </div>
-    <div class="servers__block">
-      <h3>Tau Ceti Classic III</h3>
-      <div class="servers__data" id="TC3">
-        <div class="servers__mode" />
-        <div class="servers__players" />
-        <div class="servers__roundTime" />
-      </div>
-      <a
-        class="servers__play"
-        href="byond://game.taucetistation.org:2508">Играть</a>
-    </div>
+    {/each}
   </section>
   <section class="servers">
     <div class="servers__header">
