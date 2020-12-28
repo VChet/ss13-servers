@@ -2,7 +2,45 @@
   import axios from "axios";
   import { onMount } from "svelte";
 
+  import Server from "./Server.svelte";
+
   let tauServers: Array<any> = [];
+  let ss220Servers: Array<any> = [
+    {
+      name: "Paradise",
+      url: "byond://rv666.asuscomm.com:7721",
+    },
+    {
+      name: "Whitelist",
+      url: "byond://rv666.asuscomm.com:7722",
+    },
+  ];
+  let onyxServers: Array<any> = [
+    {
+      name: "Chaotic Onyx",
+      description:
+        "Классический дух оторванной от&nbsp;остального человечества станции, на&nbsp;которой вечно что-то идет не&nbsp;так и&nbsp;никто не&nbsp;знает, что с&nbsp;этим  делать.",
+      url: "byond://ss13.ru:2506",
+    },
+    {
+      name: "Lawful Onyx",
+      description:
+        "Чрезвычайные ситуации с&nbsp;упором в&nbsp;отыгрыш интересных и&nbsp;запоминающихся персонажей.",
+      url: "byond://ss13.ru:2507",
+      buttons: [
+        {
+          text: "Карта",
+          url: "https://wiki.ss13.ru/images/7/7c/Onyx_Exodus.png",
+        },
+      ],
+    },
+    {
+      name: "Experimental Onyx",
+      description:
+        "Происходящее на&nbsp;этом сервере такая&nbsp;же загадка, как и&nbsp;расписание его запусков.",
+      url: "byond://ss13.ru:2508",
+    },
+  ];
 
   async function fetchTauServers() {
     tauServers = [];
@@ -13,6 +51,7 @@
           tauServers = [
             ...tauServers,
             {
+              error: data.error,
               name: "Tau Ceti Classic",
               map: data.map_name,
               mode: data.mode,
@@ -28,6 +67,7 @@
           tauServers = [
             ...tauServers,
             {
+              error: data.error,
               name: "Tau Ceti Classic II",
               map: data.map_name,
               mode: data.mode,
@@ -43,6 +83,7 @@
           tauServers = [
             ...tauServers,
             {
+              error: data.error,
               name: "Tau Ceti Classic III",
               map: data.map_name,
               mode: data.mode,
@@ -56,17 +97,6 @@
       console.error(response);
     }
   }
-
-  const pluralize = function (number: number, titles: Array<string>) {
-    const cases = [2, 0, 1, 1, 1, 2];
-    const text =
-      titles[
-        number % 100 > 4 && number % 100 < 20
-          ? 2
-          : cases[number % 10 < 5 ? number % 10 : 5]
-      ];
-    return `${number} ${text}`;
-  };
 
   onMount(() => {
     fetchTauServers();
@@ -108,29 +138,7 @@
       <a on:click={fetchTauServers}>🔄</a>
     </div>
     {#each tauServers as server}
-      <div class="servers__block">
-        <h3>{server.name}</h3>
-        <div class="servers__data">
-          <div class="servers__mode">
-            {#if server.map && server.mode}
-              {server.map}
-              ({server.mode})
-            {:else}ERROR{/if}
-          </div>
-          <div class="servers__players">
-            {server.players ? pluralize(server.players, [
-                  'игрок',
-                  'игрока',
-                  'игроков',
-                ]) : '--'}
-          </div>
-          <div class="servers__roundTime">
-            Продолжительность:
-            {server.duration || '--:--'}
-          </div>
-        </div>
-        <a class="servers__play" href={server.url}>Играть</a>
-      </div>
+      <Server data={server} />
     {/each}
   </section>
   <section class="servers">
@@ -149,14 +157,9 @@
         target="_blank"
         rel="noreferrer">Карта</a>
     </div>
-    <div class="servers__block">
-      <h3>Paradise</h3>
-      <a class="servers__play" href="byond://rv666.asuscomm.com:7721">Играть</a>
-    </div>
-    <div class="servers__block">
-      <h3>Whitelist</h3>
-      <a class="servers__play" href="byond://rv666.asuscomm.com:7722">Играть</a>
-    </div>
+    {#each ss220Servers as server}
+      <Server data={server} />
+    {/each}
   </section>
   <section class="servers">
     <div class="servers__header">
@@ -171,35 +174,9 @@
         rel="noreferrer">Правила</a>
       <a href="https://wiki.ss13.ru" target="_blank" rel="noreferrer">Вики</a>
     </div>
-    <div class="servers__block">
-      <h3>Chaotic Onyx</h3>
-      <p>
-        Классический дух оторванной от&nbsp;остального человечества станции,
-        на&nbsp;которой вечно что-то идет не&nbsp;так и&nbsp;никто
-        не&nbsp;знает, что с&nbsp;этим делать.
-      </p>
-      <a class="servers__play" href="byond://ss13.ru:2506">Играть</a>
-    </div>
-    <div class="servers__block">
-      <h3>Lawful Onyx</h3>
-      <p>
-        Чрезвычайные ситуации с&nbsp;упором в&nbsp;отыгрыш интересных
-        и&nbsp;запоминающихся персонажей.
-      </p>
-      <a class="servers__play" href="byond://ss13.ru:2507">Играть</a>
-      <a
-        href="https://wiki.ss13.ru/images/7/7c/Onyx_Exodus.png"
-        target="_blank"
-        rel="noreferrer">Карта</a>
-    </div>
-    <div class="servers__block">
-      <h3>Experimental Onyx</h3>
-      <p>
-        Происходящее на&nbsp;этом сервере такая&nbsp;же загадка, как
-        и&nbsp;расписание его запусков.
-      </p>
-      <a class="servers__play" href="byond://ss13.ru:2508">Играть</a>
-    </div>
+    {#each onyxServers as server}
+      <Server data={server} />
+    {/each}
   </section>
   <section class="info">
     <a href="http://ps.ss13.net" target="_blank" rel="noreferrer">Paperwork
