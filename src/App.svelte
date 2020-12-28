@@ -5,7 +5,20 @@
   import Server from "./Server.svelte";
   import type { ServerModel } from "./types/Server";
 
-  let tauServers: Array<ServerModel> = [];
+  let tauServers: Array<ServerModel> = [
+    {
+      name: "Tau Ceti Classic",
+      url: "byond://game.taucetistation.org:2506",
+    },
+    {
+      name: "Tau Ceti Classic II",
+      url: "byond://game.taucetistation.org:2507",
+    },
+    {
+      name: "Tau Ceti Classic III",
+      url: "byond://game.taucetistation.org:2508",
+    },
+  ];
   let ss220Servers: Array<ServerModel> = [
     {
       name: "Paradise",
@@ -44,55 +57,54 @@
   ];
 
   async function fetchTauServers() {
-    tauServers = [];
     try {
       await axios
         .get("https://taucetistation.org/server/tauceti/json")
         .then(({ data }) => {
-          tauServers = [
-            ...tauServers,
-            {
-              error: data.error,
-              name: "Tau Ceti Classic",
-              map: data.map_name,
-              mode: data.mode,
-              players: data.players,
-              duration: data.roundduration,
-              url: "byond://game.taucetistation.org:2506",
-            },
-          ];
+          const index = tauServers.findIndex(
+            (server) => server.name === "Tau Ceti Classic"
+          );
+          tauServers[index] = {
+            error: data.error,
+            name: "Tau Ceti Classic",
+            map: data.map_name,
+            mode: data.mode,
+            players: data.players,
+            duration: data.roundduration,
+            url: "byond://game.taucetistation.org:2506",
+          };
         });
       await axios
         .get("https://taucetistation.org/server/tauceti2/json")
         .then(({ data }) => {
-          tauServers = [
-            ...tauServers,
-            {
-              error: data.error,
-              name: "Tau Ceti Classic II",
-              map: data.map_name,
-              mode: data.mode,
-              players: data.players,
-              duration: data.roundduration,
-              url: "byond://game.taucetistation.org:2507",
-            },
-          ];
+          const index = tauServers.findIndex(
+            (server) => server.name === "Tau Ceti Classic II"
+          );
+          tauServers[index] = {
+            error: data.error,
+            name: "Tau Ceti Classic II",
+            map: data.map_name,
+            mode: data.mode,
+            players: data.players,
+            duration: data.roundduration,
+            url: "byond://game.taucetistation.org:2507",
+          };
         });
       await axios
         .get("https://taucetistation.org/server/tauceti3/json")
         .then(({ data }) => {
-          tauServers = [
-            ...tauServers,
-            {
-              error: data.error,
-              name: "Tau Ceti Classic III",
-              map: data.map_name,
-              mode: data.mode,
-              players: data.players,
-              duration: data.roundduration,
-              url: "byond://game.taucetistation.org:2508",
-            },
-          ];
+          const index = tauServers.findIndex(
+            (server) => server.name === "Tau Ceti Classic III"
+          );
+          tauServers[index] = {
+            error: data.error,
+            name: "Tau Ceti Classic III",
+            map: data.map_name,
+            mode: data.mode,
+            players: data.players,
+            duration: data.roundduration,
+            url: "byond://game.taucetistation.org:2508",
+          };
         });
     } catch ({ response }) {
       console.error(response);
