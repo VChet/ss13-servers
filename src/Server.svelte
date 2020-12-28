@@ -15,6 +15,43 @@
   };
 </script>
 
+<style>
+  .servers__block {
+    flex: 1 1 15%;
+    margin: 20px;
+    padding: 20px;
+    background-color: #1d1d24e1;
+    border-radius: 6px;
+    border: 1px solid #31313b;
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  .servers__block h3 {
+    width: 100%;
+    text-align: center;
+    margin: 0 0 10px;
+  }
+  .servers__block p {
+    text-align: center;
+    color: #cacaca;
+    font-size: 16px;
+  }
+  .servers__block .servers__data {
+    width: 100%;
+    text-align: center;
+    line-height: 28px;
+    padding-bottom: 10px;
+    color: #cacaca;
+  }
+  .servers__play {
+    display: block;
+    max-width: 300px;
+    border: 1px solid rgb(70, 110, 110);
+  }
+</style>
+
 <div class="servers__block">
   <h3>{data.name}</h3>
   {#if data.map && !data.error}

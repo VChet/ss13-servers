@@ -119,6 +119,26 @@
   });
 </script>
 
+<style>
+  .servers,
+  .info {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 15px 0;
+    background-color: #16161ce6;
+    border: 1px solid #31313b;
+    border-radius: 4px;
+  }
+  .info {
+    padding: 20px;
+    justify-content: center;
+  }
+  .servers__header {
+    flex-basis: 100%;
+    text-align: center;
+  }
+</style>
+
 <div class="stars" />
 <main class="container">
   <section class="servers">
