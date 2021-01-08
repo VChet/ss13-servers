@@ -71,10 +71,14 @@
       {@html data.description}
     </p>
   {/if}
-  <a class="servers__play" href={data.url}>Играть</a>
+  <a class="button servers__play" href={data.url}>Играть</a>
   {#if data.buttons && data.buttons.length}
     {#each data.buttons as button}
-      <a href={button.url} target="_blank" rel="noreferrer">{button.text}</a>
+      <a
+        class="button"
+        href={button.url}
+        target="_blank"
+        rel="noreferrer">{button.text}</a>
     {/each}
   {/if}
 </div>

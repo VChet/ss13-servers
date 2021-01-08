@@ -145,30 +145,36 @@
     <div class="servers__header">
       <h2>Tau Ceti</h2>
       <a
+        class="button"
         href="https://discord.gg/YCWRjkb"
         target="_blank"
         rel="noreferrer">Discord</a>
       <a
+        class="button"
         href="https://rules.taucetistation.org/"
         target="_blank"
         rel="noreferrer">Правила</a>
       <a
+        class="button"
         href="https://wiki.taucetistation.org"
         target="_blank"
         rel="noreferrer">Вики</a>
       <a
+        class="button"
         href="https://map.taucetistation.org"
         target="_blank"
         rel="noreferrer">Карта</a>
       <a
+        class="button"
         href="https://wiki.taucetistation.org/Guides"
         target="_blank"
         rel="noreferrer">Гайды</a>
       <a
+        class="button"
         href="https://wiki.taucetistation.org/Music"
         target="_blank"
         rel="noreferrer">Музыка</a>
-      <a on:click={fetchTauServers}>🔄</a>
+      <button class="button" on:click={fetchTauServers}>🔄</button>
     </div>
     {#each tauServers as server}
       <Server data={server} />
@@ -178,14 +184,17 @@
     <div class="servers__header">
       <h2>SS220</h2>
       <a
+        class="button"
         href="http://rv666.asuscomm.com/wiki/index.php/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0_%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0"
         target="_blank"
         rel="noreferrer">Правила</a>
       <a
+        class="button"
         href="http://rv666.asuscomm.com/wiki"
         target="_blank"
         rel="noreferrer">Вики</a>
       <a
+        class="button"
         href="http://rv666.asuscomm.com/wiki/index.php/%D0%9B%D0%BE%D0%BA%D0%B0%D1%86%D0%B8%D0%B8"
         target="_blank"
         rel="noreferrer">Карта</a>
@@ -198,23 +207,33 @@
     <div class="servers__header">
       <h2>Chaotic Onyx</h2>
       <a
+        class="button"
         href="https://discord.gg/5BRMMFg"
         target="_blank"
         rel="noreferrer">Discord</a>
       <a
+        class="button"
         href="https://wiki.ss13.ru/index.php?title=Onyx_Rules"
         target="_blank"
         rel="noreferrer">Правила</a>
-      <a href="https://wiki.ss13.ru" target="_blank" rel="noreferrer">Вики</a>
+      <a
+        class="button"
+        href="https://wiki.ss13.ru"
+        target="_blank"
+        rel="noreferrer">Вики</a>
     </div>
     {#each onyxServers as server}
       <Server data={server} />
     {/each}
   </section>
   <section class="info">
-    <a href="http://ps.ss13.net" target="_blank" rel="noreferrer">Paperwork
-      Simulator</a>
     <a
+      class="button"
+      href="http://ps.ss13.net"
+      target="_blank"
+      rel="noreferrer">Paperwork Simulator</a>
+    <a
+      class="button"
       href="https://tgstation13.org/wiki/"
       target="_blank"
       rel="noreferrer">Вики /tg/ (EN)</a>
