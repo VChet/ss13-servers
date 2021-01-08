@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css?family=Exo+2&display=swap");
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: #000000 url("./assets/stars.png") repeat top center;
+  font-family: "Exo 2", "Open Sans", sans-serif;
+  font-size: 18px;
+  color: #ffffff;
+}
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+.stars {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: transparent url("./assets/flickering.png") repeat top center;
+  animation: flickering 600s linear infinite;
+}
+@keyframes flickering {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+.button {
+  display: inline-block;
+  text-decoration: inherit;
+  background-color: #23232d;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 4px;
+  color: #cacaca;
+  font-size: inherit;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.button:hover {
+  background-color: #31313b;
+}
+.button:active {
+  transform: translateY(1px);
+}
