@@ -25,34 +25,28 @@
       url: "byond://rv666.asuscomm.com:7721",
     },
     {
-      name: "Whitelist",
-      url: "byond://rv666.asuscomm.com:7722",
+      name: "Тестовый",
+      url: "byond://rv666.asuscomm.com:7720",
     },
   ];
   let onyxServers: Array<ServerModel> = [
     {
       name: "Chaotic Onyx",
       description:
-        "Классический дух оторванной от&nbsp;остального человечества станции, на&nbsp;которой вечно что-то идет не&nbsp;так и&nbsp;никто не&nbsp;знает, что с&nbsp;этим  делать.",
+        "Классический дух оторванной от остального человечества станции, на которой вечно что-то идет не так и никто не знает, что с этим делать.",
       url: "byond://ss13.ru:2506",
     },
     {
-      name: "Lawful Onyx",
+      name: "Eos Orbital Station",
       description:
-        "Чрезвычайные ситуации с&nbsp;упором в&nbsp;отыгрыш интересных и&nbsp;запоминающихся персонажей.",
-      url: "byond://ss13.ru:2507",
-      buttons: [
-        {
-          text: "Карта",
-          url: "https://wiki.ss13.ru/images/7/7c/Onyx_Exodus.png",
-        },
-      ],
+        "Настоящий ролевой сервер про чрезвычайные ситуации с упором в отыгрыш интересных и запоминающихся персонажей.",
+      url: "byond://play.ss13.ru:2507",
     },
     {
-      name: "Experimental Onyx",
+      name: "Crimson Dragon",
       description:
-        "Происходящее на&nbsp;этом сервере такая&nbsp;же загадка, как и&nbsp;расписание его запусков.",
-      url: "byond://ss13.ru:2508",
+        "Квинтэссенция весёлого и динамичного безумия, заключенная внутри изолированной космической станции вместе с её параноидальным и зачастую крайне некомпетентным персоналом. Что может пойти не так?",
+      url: "byond://play.ss13.ru:2508",
     },
   ];
 
@@ -118,26 +112,6 @@
     }, 10 * 60 * 1000); // every 10 minutes
   });
 </script>
-
-<style>
-  .servers,
-  .info {
-    display: flex;
-    flex-flow: row wrap;
-    margin: 15px 0;
-    background-color: #16161ce6;
-    border: 1px solid #31313b;
-    border-radius: 4px;
-  }
-  .info {
-    padding: 20px;
-    justify-content: center;
-  }
-  .servers__header {
-    flex-basis: 100%;
-    text-align: center;
-  }
-</style>
 
 <div class="stars" />
 <main class="container">
@@ -208,7 +182,7 @@
       <h2>Chaotic Onyx</h2>
       <a
         class="button"
-        href="https://discord.gg/5BRMMFg"
+        href="https://discord.gg/4JFNdbk"
         target="_blank"
         rel="noreferrer">Discord</a>
       <a
@@ -239,3 +213,23 @@
       rel="noreferrer">Вики /tg/ (EN)</a>
   </section>
 </main>
+
+<style>
+  .servers,
+  .info {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 15px 0;
+    background-color: #16161ce6;
+    border: 1px solid #31313b;
+    border-radius: 4px;
+  }
+  .info {
+    padding: 20px;
+    justify-content: center;
+  }
+  .servers__header {
+    flex-basis: 100%;
+    text-align: center;
+  }
+</style>
