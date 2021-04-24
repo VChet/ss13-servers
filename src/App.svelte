@@ -25,8 +25,8 @@
       url: "byond://rv666.asuscomm.com:7721",
     },
     {
-      name: "Тестовый",
-      url: "byond://rv666.asuscomm.com:7720",
+      name: "Whitelist",
+      url: "byond://rv666.asuscomm.com:7722",
     },
   ];
   let onyxServers: Array<ServerModel> = [
