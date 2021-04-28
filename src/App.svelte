@@ -22,11 +22,11 @@
   let ss220Servers: Array<ServerModel> = [
     {
       name: "Paradise",
-      url: "byond://rv666.asuscomm.com:7721",
+      url: "byond://launch.ss220.space:7721",
     },
     {
       name: "Whitelist",
-      url: "byond://rv666.asuscomm.com:7722",
+      url: "byond://launch.ss220.space:7722",
     },
   ];
   let onyxServers: Array<ServerModel> = [
@@ -177,7 +177,7 @@
       <h2>SS220</h2>
       <a
         class="button"
-        href="http://rv666.asuscomm.com/wiki/index.php/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0_%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0"
+        href="https://ss220.space/wiki/index.php/Правила_Сервера"
         target="_blank"
         rel="noreferrer"
       >
@@ -185,7 +185,7 @@
       </a>
       <a
         class="button"
-        href="http://rv666.asuscomm.com/wiki"
+        href="https://ss220.space/wiki"
         target="_blank"
         rel="noreferrer"
       >
@@ -193,7 +193,7 @@
       </a>
       <a
         class="button"
-        href="http://rv666.asuscomm.com/wiki/index.php/%D0%9B%D0%BE%D0%BA%D0%B0%D1%86%D0%B8%D0%B8"
+        href="https://ss220.space/wiki/index.php/Локации"
         target="_blank"
         rel="noreferrer"
       >
