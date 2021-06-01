@@ -131,6 +131,14 @@
       </a>
       <a
         class="button"
+        href="https://taucetistation.org/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Сайт
+      </a>
+      <a
+        class="button"
         href="https://rules.taucetistation.org/"
         target="_blank"
         rel="noreferrer"
@@ -220,6 +228,14 @@
       </a>
       <a
         class="button"
+        href="https://ss13.ru/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Сайт
+      </a>
+      <a
+        class="button"
         href="https://wiki.ss13.ru/index.php?title=Onyx_Rules"
         target="_blank"
         rel="noreferrer"
@@ -255,6 +271,14 @@
       rel="noreferrer"
     >
       Вики /tg/ (EN)
+    </a>
+    <a
+      class="button"
+      href="https://wiki.beestation13.com/"
+      target="_blank"
+      rel="noreferrer"
+    >
+      Вики BeeStation (EN)
     </a>
   </section>
 </main>
