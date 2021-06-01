@@ -11,6 +11,8 @@ export interface ServerModel {
     url: string
   }]
 
+  /** Build */
+  build?: string
   /** Current map */
   map?: string
   /** Game mode */
