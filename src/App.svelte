@@ -206,6 +206,14 @@
       <h2>SS220</h2>
       <a
         class="button"
+        href="https://discord.ss220.space"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Discord
+      </a>
+      <a
+        class="button"
         href="https://ss220.space/wiki/index.php/Правила_Сервера"
         target="_blank"
         rel="noreferrer"
