@@ -20,13 +20,22 @@
   {#if data.build}
     <div class="servers__build">{data.build}</div>
   {/if}
-  {#if data.map && !data.error}
+  {#if !data.error}
     <div class="servers__data">
-      <div class="servers__mode">{data.map} ({data.mode})</div>
-      <div class="servers__players">
-        {pluralize(data.players, ["игрок", "игрока", "игроков"])}
-      </div>
-      <div class="servers__roundTime">Продолжительность: {data.duration}</div>
+      {#if data.map || data.mode}
+        <div class="servers__mode">
+          {#if data.map}{data.map}{/if}
+          {#if data.mode}({data.mode}){/if}
+        </div>
+      {/if}
+      {#if data.players}
+        <div class="servers__players">
+          {pluralize(data.players, ["игрок", "игрока", "игроков"])}
+        </div>
+      {/if}
+      {#if data.duration}
+        <div class="servers__roundTime">Продолжительность: {data.duration}</div>
+      {/if}
     </div>
   {/if}
   {#if data.error}
