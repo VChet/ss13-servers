@@ -22,6 +22,13 @@
   {/if}
   {#if !data.error}
     <div class="servers__data">
+      {#if data.buttons?.length}
+        {#each data.buttons as button}
+          <a class="button" href={button.url} target="_blank" rel="noreferrer">
+            {button.text}
+          </a>
+        {/each}
+      {/if}
       {#if data.map || data.mode}
         <div class="servers__mode">
           {#if data.map}{data.map}{/if}
@@ -42,21 +49,12 @@
     <div class="servers__data">NO DATA</div>
   {/if}
   {#if data.description}
-    <p>
-      {@html data.description}
-    </p>
+    <p>{@html data.description}</p>
   {/if}
   <a class="button servers__play" href={data.url}>Играть</a>
-  {#if data.buttons && data.buttons.length}
-    {#each data.buttons as button}
-      <a class="button" href={button.url} target="_blank" rel="noreferrer"
-        >{button.text}</a
-      >
-    {/each}
-  {/if}
 </div>
 
-<style>
+<style lang="scss">
   .servers__block {
     flex: 1 1 15%;
     margin: 20px;
@@ -68,27 +66,30 @@
     align-items: center;
     flex-flow: row wrap;
     justify-content: center;
-  }
-  .servers__block h3 {
-    width: 100%;
-    text-align: center;
-    margin: 0 0 10px;
-  }
-  .servers__block p {
-    margin: 5px 0;
-    text-align: center;
-    color: #cacaca;
-    font-size: 16px;
-  }
-  .servers__block .servers__data {
-    width: 100%;
-    text-align: center;
-    line-height: 28px;
-    padding-bottom: 10px;
-    color: #cacaca;
+    h3 {
+      width: 100%;
+      text-align: center;
+      margin: 0 0 10px;
+    }
+    p {
+      margin: 5px 0;
+      text-align: center;
+      color: #cacaca;
+      font-size: 16px;
+    }
+    .servers__data {
+      width: 100%;
+      text-align: center;
+      line-height: 28px;
+      margin-bottom: 10px;
+      color: #cacaca;
+      .button {
+        padding: 5px 10px;
+      }
+    }
   }
   .servers__play {
-    margin-top: 15px;
+    margin-top: 5px;
     display: block;
     max-width: 300px;
     border: 1px solid rgb(70, 110, 110);
