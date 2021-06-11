@@ -23,25 +23,29 @@
     {
       name: "Main",
       url: "byond://launch.ss220.space:7721",
+      build: "Paradise",
       map: "Delta",
       mode: "secret",
     },
     {
       name: "Extended eXperimental",
       url: "byond://launch.ss220.space:7724",
-      map: "Cyberiad",
+      build: "Paradise",
+      map: "Box Station",
       mode: "extended",
     },
     {
       name: "Whitelist",
       url: "byond://launch.ss220.space:7723",
-      map: "Cyberiad",
+      build: "Paradise",
+      map: "Box Station",
       mode: "secret",
     },
     {
       name: "Whitelist Prime",
       url: "byond://launch.ss220.space:7722",
-      map: "Cyberiad",
+      build: "Paradise",
+      map: "Box Station",
       mode: "secret",
     },
   ];
@@ -230,11 +234,19 @@
       </a>
       <a
         class="button"
-        href="https://ss220.space/wiki/index.php/Локации"
+        href="https://affectedarc07.github.io/SS13WebMap/Paradise/Delta"
         target="_blank"
         rel="noreferrer"
       >
-        Карта
+        Карта Delta
+      </a>
+      <a
+        class="button"
+        href="https://affectedarc07.github.io/SS13WebMap/Paradise/Cyberiad"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Карта Cyberiad
       </a>
     </div>
     {#each ss220Servers as server}
@@ -289,6 +301,14 @@
       rel="noreferrer"
     >
       Paperwork Simulator
+    </a>
+    <a
+      class="button"
+      href="https://affectedarc07.github.io/SS13WebMap"
+      target="_blank"
+      rel="noreferrer"
+    >
+      WebMap
     </a>
     <a
       class="button"
