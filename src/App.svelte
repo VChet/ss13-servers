@@ -1,129 +1,38 @@
 <script lang="ts">
-  import axios from "axios";
   import { onMount } from "svelte";
 
   import Server from "./Server.svelte";
-  import type { ServerModel } from "./types/Server";
-
-  let tauServers: Array<ServerModel> = [
-    {
-      name: "Tau Ceti Classic",
-      url: "byond://game.taucetistation.org:2506",
-    },
-    {
-      name: "Tau Ceti Classic II",
-      url: "byond://game.taucetistation.org:2507",
-    },
-    {
-      name: "Tau Ceti Classic III",
-      url: "byond://game.taucetistation.org:2508",
-    },
-  ];
-  let ss220Servers: Array<ServerModel> = [
-    {
-      name: "Main",
-      url: "byond://launch.ss220.space:7721",
-      build: "Paradise",
-      map: "Delta",
-      mode: "secret",
-    },
-    {
-      name: "Extended eXperimental",
-      url: "byond://launch.ss220.space:7724",
-      build: "Paradise",
-      map: "Cyberiad",
-      mode: "extended",
-    },
-    {
-      name: "Whitelist",
-      url: "byond://launch.ss220.space:7723",
-      build: "Paradise",
-      map: "Cyberiad",
-      mode: "secret",
-    },
-    {
-      name: "Whitelist Prime",
-      url: "byond://launch.ss220.space:7722",
-      build: "Infinity",
-      map: "Sierra",
-      mode: "secret",
-    },
-  ];
-  let onyxServers: Array<ServerModel> = [
-    {
-      name: "Crimson Dragon",
-      description:
-        "Квинтэссенция весёлого и динамичного безумия, заключенная внутри изолированной космической станции вместе с её параноидальным и зачастую крайне некомпетентным персоналом. Что может пойти не так?",
-      url: "byond://play.ss13.ru:2508",
-      build: "BeeStation",
-    },
-    {
-      name: "Chaotic Onyx",
-      description:
-        "Классический дух оторванной от остального человечества станции, на которой вечно что-то идет не так и никто не знает, что с этим делать.",
-      url: "byond://play.ss13.ru:2506",
-      build: "OnyxBay",
-    },
-    {
-      name: "Eos Orbital Station",
-      description:
-        "Настоящий ролевой сервер про чрезвычайные ситуации с упором в отыгрыш интересных и запоминающихся персонажей.",
-      url: "byond://play.ss13.ru:2507",
-      build: "OnyxBay",
-    },
-  ];
+  import { fetchTauServer, tauServers } from "./servers/tauCeti";
+  import { ss220Servers } from "./servers/ss220";
+  import { onyxServers } from "./servers/onyx";
 
   async function fetchTauServers() {
     try {
       await Promise.all([
-        axios
-          .get("https://taucetistation.org/server/tauceti/json")
-          .then(({ data }) => {
+        fetchTauServer("https://taucetistation.org/server/tauceti/json").then(
+          (data) => {
             const index = tauServers.findIndex(
               (server) => server.name === "Tau Ceti Classic"
             );
-            tauServers[index] = {
-              error: data.error,
-              name: "Tau Ceti Classic",
-              map: data.map_name,
-              mode: data.mode,
-              players: data.players,
-              duration: data.roundduration,
-              url: "byond://game.taucetistation.org:2506",
-            };
-          }),
-        axios
-          .get("https://taucetistation.org/server/tauceti2/json")
-          .then(({ data }) => {
+            tauServers[index] = { ...tauServers[index], ...data };
+          }
+        ),
+        fetchTauServer("https://taucetistation.org/server/tauceti2/json").then(
+          (data) => {
             const index = tauServers.findIndex(
               (server) => server.name === "Tau Ceti Classic II"
             );
-            tauServers[index] = {
-              error: data.error,
-              name: "Tau Ceti Classic II",
-              map: data.map_name,
-              mode: data.mode,
-              players: data.players,
-              duration: data.roundduration,
-              url: "byond://game.taucetistation.org:2507",
-            };
-          }),
-        axios
-          .get("https://taucetistation.org/server/tauceti3/json")
-          .then(({ data }) => {
+            tauServers[index] = { ...tauServers[index], ...data };
+          }
+        ),
+        fetchTauServer("https://taucetistation.org/server/tauceti3/json").then(
+          (data) => {
             const index = tauServers.findIndex(
               (server) => server.name === "Tau Ceti Classic III"
             );
-            tauServers[index] = {
-              error: data.error,
-              name: "Tau Ceti Classic III",
-              map: data.map_name,
-              mode: data.mode,
-              players: data.players,
-              duration: data.roundduration,
-              url: "byond://game.taucetistation.org:2508",
-            };
-          }),
+            tauServers[index] = { ...tauServers[index], ...data };
+          }
+        ),
       ]);
     } catch ({ response }) {
       console.error(response);
@@ -132,9 +41,7 @@
 
   onMount(() => {
     fetchTauServers();
-    setInterval(() => {
-      fetchTauServers();
-    }, 10 * 60 * 1000); // every 10 minutes
+    setInterval(fetchTauServers, 10 * 60 * 1000); // every 10 minutes
   });
 </script>
 
