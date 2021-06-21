@@ -1,47 +1,43 @@
 export interface TauServer {
-  version: string
-  mode: string
-  respawn: number
-  enter: number
-  ai: number
-  host?: any
-  players: number
-  stationtime: string
-  gamestate: number
-  roundduration: string
-  map_name: string
-  popcap: number
-  round_id: number
-  revision: string
-  admins: number
-  cached: number
-  error?: number
+  version: string;
+  mode: string;
+  respawn: number;
+  enter: number;
+  ai: number;
+  host?: any;
+  players: number;
+  stationtime: string;
+  gamestate: number;
+  roundduration: string;
+  map_name: string;
+  popcap: number;
+  round_id: number;
+  revision: string;
+  admins: number;
+  cached: number;
+  error?: number;
 }
 
 export interface ServerModel {
   /** Server name */
-  name: string
+  name: string;
   /** Byond server URL */
-  url: string
+  url: string;
   /** Server description */
-  description?: string
+  description?: string;
   /** Additional server related buttons */
-  buttons?: [{
-    text: string
-    url: string
-  }]
-
+  buttons?: [{ text: string; url: string }];
   /** Build */
-  build?: string
+  build?: string;
   /** Current map */
-  map?: string
+  map?: string;
   /** Game mode */
-  mode?: string
+  mode?: string;
   /** Player count */
-  players?: number
+  players?: number;
   /** Round time */
-  duration?: string
+  duration?: string;
 
   /** Server data parsing error code */
-  error?: number
+  error?: number;
 }
