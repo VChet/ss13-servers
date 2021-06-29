@@ -19,14 +19,14 @@ export let ss220Servers: Array<ServerModel> = [
     name: "Whitelist",
     url: "byond://launch.ss220.space:7723",
     build: "Paradise",
-    map: "Cyberiad",
+    map: "Delta",
     mode: "secret",
   },
   {
     name: "Whitelist Prime",
     url: "byond://launch.ss220.space:7722",
-    build: "Infinity",
-    map: "Sierra",
+    build: "Paradise",
+    map: "Cyberiad",
     mode: "secret",
   },
 ];
