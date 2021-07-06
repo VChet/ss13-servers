@@ -56,7 +56,7 @@
 
 <style lang="scss">
   .servers__block {
-    flex: 1 1 15%;
+    flex: 1 1 20%;
     margin: 20px;
     padding: 20px;
     background-color: #1d1d24e1;

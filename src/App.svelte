@@ -137,7 +137,15 @@
         target="_blank"
         rel="noreferrer"
       >
-        Вики
+        Вики Paradise
+      </a>
+      <a
+        class="button"
+        href="https://wiki.infinity-ss13.info/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Вики Infinity
       </a>
       <a
         class="button"
@@ -145,7 +153,7 @@
         target="_blank"
         rel="noreferrer"
       >
-        Карта Delta
+        Карта Kerberos (Delta)
       </a>
       <a
         class="button"
@@ -153,7 +161,7 @@
         target="_blank"
         rel="noreferrer"
       >
-        Карта Cyberiad
+        Карта Cyberiad (BoxStation)
       </a>
     </div>
     {#each ss220Servers as server}
