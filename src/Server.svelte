@@ -89,7 +89,7 @@
     }
   }
   .servers__play {
-    margin-top: 5px;
+    margin-top: 15px;
     display: block;
     max-width: 300px;
     border: 1px solid rgb(70, 110, 110);
