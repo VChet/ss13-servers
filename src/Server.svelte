@@ -18,10 +18,12 @@
 <div class="servers__block">
   <h3>{data.name}</h3>
   {#if data.build}
-    <div class="servers__build">{data.build}</div>
+    <div class="servers__build" title="Билд">{data.build}</div>
   {/if}
-  {#if !data.error}
-    <div class="servers__data">
+  <div class="servers__data">
+    {#if data.error}
+      NO DATA
+    {:else}
       {#if data.buttons?.length}
         {#each data.buttons as button}
           <a class="button" href={button.url} target="_blank" rel="noreferrer">
@@ -30,28 +32,33 @@
         {/each}
       {/if}
       {#if data.map || data.mode}
-        <div class="servers__mode">
+        <div class="servers__mode" title="Карта">
           {#if data.map}{data.map}{/if}
           {#if data.mode}({data.mode}){/if}
         </div>
       {/if}
-      {#if data.players}
+      {#if data.players >= 0}
         <div class="servers__players">
           {pluralize(data.players, ["игрок", "игрока", "игроков"])}
         </div>
       {/if}
       {#if data.duration}
-        <div class="servers__roundTime">Продолжительность: {data.duration}</div>
+        <div class="servers__round-time">
+          Продолжительность: {data.duration}
+        </div>
       {/if}
+    {/if}
+  </div>
+  {#if data.description}
+    <div class="servers__description">
+      {data.description}
     </div>
   {/if}
-  {#if data.error}
-    <div class="servers__data">NO DATA</div>
-  {/if}
-  {#if data.description}
-    <p>{@html data.description}</p>
-  {/if}
-  <a class="button servers__play" href={data.url}>Играть</a>
+  <a
+    class="button servers__play"
+    title="Запустить Byond и подключиться"
+    href={data.url}>Играть</a
+  >
 </div>
 
 <style lang="scss">
@@ -63,29 +70,25 @@
     border-radius: 6px;
     border: 1px solid #31313b;
     display: flex;
+    gap: 5px;
     align-items: center;
-    flex-flow: row wrap;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
     h3 {
-      width: 100%;
-      text-align: center;
-      margin: 0 0 10px;
-    }
-    p {
-      margin: 5px 0;
-      text-align: center;
-      color: #cacaca;
-      font-size: 16px;
+      margin: 0;
     }
     .servers__data {
-      width: 100%;
-      text-align: center;
-      line-height: 28px;
-      margin-bottom: 10px;
       color: #cacaca;
+      font-size: 16px;
+      line-height: 26px;
       .button {
         padding: 5px 10px;
       }
+    }
+    .servers__description {
+      color: #cacaca;
+      font-size: 16px;
     }
   }
   .servers__play {
