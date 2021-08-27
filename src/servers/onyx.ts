@@ -1,4 +1,12 @@
 import type { ServerModel } from "../types/Server";
+import type { LinkButton } from "../types/LinkButtons";
+
+export const onyxButtons: Array<LinkButton> = [
+  { text: "Discord", url: "https://discord.gg/4JFNdbk" },
+  { text: "Сайт", url: "https://ss13.ru" },
+  { text: "Правила", url: "https://wiki.ss13.ru/index.php?title=Onyx_Rules" },
+  { text: "Вики", url: "https://wiki.ss13.ru" },
+]
 
 export const onyxServers: Array<ServerModel> = [
   {

@@ -1,3 +1,5 @@
+import type { LinkButton } from "./LinkButtons";
+
 export interface TauServer {
   version: string;
   mode: string;
@@ -26,7 +28,7 @@ export interface ServerModel {
   /** Server description */
   description?: string;
   /** Additional server related buttons */
-  buttons?: [{ text: string; url: string }];
+  buttons?: Array<LinkButton>;
   /** Build */
   build?: string;
   /** Current map */

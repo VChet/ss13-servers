@@ -1,6 +1,17 @@
 import axios from "axios";
 import type { AxiosResponse } from "axios";
 import type { ServerModel, TauServer } from "../types/Server";
+import type { LinkButton } from "../types/LinkButtons";
+
+export const tauButtons: Array<LinkButton> = [
+  { text: "Discord", url: "https://discord.gg/YCWRjkb" },
+  { text: "Сайт", url: "https://taucetistation.org" },
+  { text: "Правила", url: "https://rules.taucetistation.org" },
+  { text: "Вики", url: "https://wiki.taucetistation.org" },
+  { text: "Карта", url: "https://map.taucetistation.org" },
+  { text: "Гайды", url: "https://wiki.taucetistation.org/Guides" },
+  { text: "Музыка", url: "https://wiki.taucetistation.org/Music" },
+]
 
 export const tauServers: Array<ServerModel> = [
   {
@@ -19,6 +30,7 @@ export const tauServers: Array<ServerModel> = [
     url: "byond://game.taucetistation.org:2508",
   },
 ];
+
 
 export async function fetchTauServer(url: string): Promise<Partial<ServerModel>> {
   const { data }: AxiosResponse<TauServer> = await axios.get(url);
