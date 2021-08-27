@@ -13,6 +13,7 @@ export const ss220Buttons: Array<LinkButton> = [
 export const ss220Servers: Array<ServerModel> = [
   {
     name: "Main",
+    description: "Основной",
     url: "byond://launch.ss220.space:7721",
     build: "Paradise",
     map: "Kerberos",
@@ -20,6 +21,7 @@ export const ss220Servers: Array<ServerModel> = [
   },
   {
     name: "Extended eXperimental",
+    description: "Без антагонистов",
     url: "byond://launch.ss220.space:7724",
     build: "Paradise",
     map: "Cyberiad",
@@ -27,6 +29,7 @@ export const ss220Servers: Array<ServerModel> = [
   },
   {
     name: "Whitelist Paradise",
+    description: "Доступ после 30 часов игры",
     url: "byond://launch.ss220.space:7723",
     build: "Paradise",
     map: "Kerberos",
@@ -34,6 +37,7 @@ export const ss220Servers: Array<ServerModel> = [
   },
   {
     name: "Whitelist Sierra",
+    description: "Доступ после 30 часов игры",
     url: "byond://launch.ss220.space:7725",
     build: "Infinity",
     map: "Sierra",
@@ -41,6 +45,7 @@ export const ss220Servers: Array<ServerModel> = [
   },
   {
     name: "Whitelist Prime",
+    description: "Ротация билдов. Нужно покупать допуск у стримеров",
     url: "byond://launch.ss220.space:7722",
     build: "Paradise",
   },
