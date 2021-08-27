@@ -7,33 +7,29 @@
   import { onyxServers } from "./servers/onyx";
 
   async function fetchTauServers() {
+    const api = [
+      {
+        name: "Tau Ceti Classic",
+        url: "https://taucetistation.org/server/tauceti/json",
+      },
+      {
+        name: "Tau Ceti Classic II",
+        url: "https://taucetistation.org/server/tauceti2/json",
+      },
+      {
+        name: "Tau Ceti Classic III",
+        url: "https://taucetistation.org/server/tauceti3/json",
+      },
+    ];
     try {
-      await Promise.all([
-        fetchTauServer("https://taucetistation.org/server/tauceti/json").then(
-          (data) => {
-            const index = tauServers.findIndex(
-              (server) => server.name === "Tau Ceti Classic"
-            );
+      await Promise.all(
+        api.map((server) =>
+          fetchTauServer(server.url).then((data) => {
+            const index = tauServers.findIndex((ts) => ts.name === server.name);
             tauServers[index] = { ...tauServers[index], ...data };
-          }
-        ),
-        fetchTauServer("https://taucetistation.org/server/tauceti2/json").then(
-          (data) => {
-            const index = tauServers.findIndex(
-              (server) => server.name === "Tau Ceti Classic II"
-            );
-            tauServers[index] = { ...tauServers[index], ...data };
-          }
-        ),
-        fetchTauServer("https://taucetistation.org/server/tauceti3/json").then(
-          (data) => {
-            const index = tauServers.findIndex(
-              (server) => server.name === "Tau Ceti Classic III"
-            );
-            tauServers[index] = { ...tauServers[index], ...data };
-          }
-        ),
-      ]);
+          })
+        )
+      );
     } catch ({ response }) {
       console.error(response);
     }
