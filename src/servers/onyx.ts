@@ -1,13 +1,6 @@
 import type { ServerModel } from "../types/Server";
 
-export let onyxServers: Array<ServerModel> = [
-  {
-    name: "Crimson Dragon",
-    description:
-      "Квинтэссенция весёлого и динамичного безумия, заключенная внутри изолированной космической станции вместе с её параноидальным и зачастую крайне некомпетентным персоналом. Что может пойти не так?",
-    url: "byond://play.ss13.ru:2508",
-    build: "BeeStation",
-  },
+export const onyxServers: Array<ServerModel> = [
   {
     name: "Chaotic Onyx",
     description:
@@ -21,5 +14,12 @@ export let onyxServers: Array<ServerModel> = [
       "Настоящий ролевой сервер про чрезвычайные ситуации с упором в отыгрыш интересных и запоминающихся персонажей.",
     url: "byond://play.ss13.ru:2507",
     build: "OnyxBay",
+  },
+  {
+    name: "Crimson Dragon",
+    description:
+      "Квинтэссенция весёлого и динамичного безумия, заключенная внутри изолированной космической станции вместе с её параноидальным и зачастую крайне некомпетентным персоналом. Что может пойти не так?",
+    url: "byond://play.ss13.ru:2508",
+    build: "BeeStation",
   },
 ];

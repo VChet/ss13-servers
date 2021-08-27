@@ -1,6 +1,6 @@
 import type { ServerModel } from "../types/Server";
 
-export let ss220Servers: Array<ServerModel> = [
+export const ss220Servers: Array<ServerModel> = [
   {
     name: "Main",
     url: "byond://launch.ss220.space:7721",
@@ -32,5 +32,6 @@ export let ss220Servers: Array<ServerModel> = [
   {
     name: "Whitelist Prime",
     url: "byond://launch.ss220.space:7722",
+    build: "Paradise",
   },
 ];

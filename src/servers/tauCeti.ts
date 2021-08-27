@@ -2,7 +2,7 @@ import axios from "axios";
 import type { AxiosResponse } from "axios";
 import type { ServerModel, TauServer } from "../types/Server";
 
-export let tauServers: Array<ServerModel> = [
+export const tauServers: Array<ServerModel> = [
   {
     name: "Tau Ceti Classic",
     description: 'Основной сервер с наибольшим лимитом игроков и активным вниманием администрации',
