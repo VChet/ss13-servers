@@ -1,11 +1,9 @@
 {
   "extends": "@tsconfig/svelte/tsconfig.json",
 
-  "esModuleInterop": true,
-  "resolveJsonModule": true,
-  "allowJs": true,
   "strict": true,
   "noUnusedLocals": true,
+  "importsNotUsedAsValues": "error",
 
   "include": ["src/**/*"],
   "exclude": ["node_modules/*", "__sapper__/*", "public/*"]
