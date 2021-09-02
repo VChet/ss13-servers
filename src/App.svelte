@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
 
   import Server from "./Server.svelte";
+  import Button from "./Button.svelte";
   import { tauButtons, tauServers, fetchTauServer } from "./servers/tauCeti";
   import { ss220Buttons, ss220Servers } from "./servers/ss220";
   import { onyxButtons, onyxServers } from "./servers/onyx";
@@ -44,8 +45,16 @@
   const infoButtons: Array<LinkButton> = [
     { text: "Paperwork Simulator", url: "http://ps.ss13.net" },
     { text: "WebMap", url: "https://affectedarc07.github.io/SS13WebMap" },
-    { text: "Вики /tg/ (EN)", url: "https://tgstation13.org/wiki" },
-    { text: "Вики BeeStation (EN)", url: "https://wiki.beestation13.com" },
+    {
+      text: "Вики /tg/ (EN)",
+      type: "wiki",
+      url: "https://tgstation13.org/wiki",
+    },
+    {
+      text: "Вики BeeStation (EN)",
+      type: "wiki",
+      url: "https://wiki.beestation13.com",
+    },
   ];
 </script>
 
@@ -56,9 +65,7 @@
     <div class="servers__header">
       <h2>Tau Ceti</h2>
       {#each tauButtons as button}
-        <a class="button" href={button.url} target="_blank" rel="noreferrer">
-          {button.text}
-        </a>
+        <Button data={button} />
       {/each}
       <button class="button" on:click={fetchTauServers}>🔄</button>
     </div>
@@ -70,9 +77,7 @@
     <div class="servers__header">
       <h2>SS220</h2>
       {#each ss220Buttons as button}
-        <a class="button" href={button.url} target="_blank" rel="noreferrer">
-          {button.text}
-        </a>
+        <Button data={button} />
       {/each}
     </div>
     {#each ss220Servers as server}
@@ -83,9 +88,7 @@
     <div class="servers__header">
       <h2>Chaotic Onyx</h2>
       {#each onyxButtons as button}
-        <a class="button" href={button.url} target="_blank" rel="noreferrer">
-          {button.text}
-        </a>
+        <Button data={button} />
       {/each}
     </div>
     {#each onyxServers as server}
@@ -94,9 +97,7 @@
   </section>
   <section class="info">
     {#each infoButtons as button}
-      <a class="button" href={button.url} target="_blank" rel="noreferrer">
-        {button.text}
-      </a>
+      <Button data={button} />
     {/each}
   </section>
 </main>

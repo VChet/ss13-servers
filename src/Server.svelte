@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Button from "./Button.svelte";
   import type { ServerModel } from "./types/Server";
 
   export let data: ServerModel;
@@ -26,9 +27,7 @@
     {:else}
       {#if data.buttons?.length}
         {#each data.buttons as button}
-          <a class="button" href={button.url} target="_blank" rel="noreferrer">
-            {button.text}
-          </a>
+          <Button data={button} />
         {/each}
       {/if}
       {#if data.map || data.mode}
@@ -57,8 +56,10 @@
   <a
     class="button servers__play"
     title="Запустить Byond и подключиться"
-    href={data.url}>Играть</a
+    href={data.url}
   >
+    Играть
+  </a>
 </div>
 
 <style lang="scss">

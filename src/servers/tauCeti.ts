@@ -4,10 +4,10 @@ import type { ServerModel, TauServer } from "../types/Server";
 import type { LinkButton } from "../types/LinkButtons";
 
 export const tauButtons: Array<LinkButton> = [
-  { text: "Discord", url: "https://discord.gg/YCWRjkb" },
+  { text: "Discord", type: "discord", url: "https://discord.gg/YCWRjkb" },
+  { text: "Вики", type: "wiki", url: "https://wiki.taucetistation.org" },
   { text: "Сайт", url: "https://taucetistation.org" },
   { text: "Правила", url: "https://rules.taucetistation.org" },
-  { text: "Вики", url: "https://wiki.taucetistation.org" },
   { text: "Карта", url: "https://map.taucetistation.org" },
   { text: "Гайды", url: "https://wiki.taucetistation.org/Guides" },
   { text: "Музыка", url: "https://wiki.taucetistation.org/Music" },

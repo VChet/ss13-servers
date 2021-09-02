@@ -49,7 +49,8 @@ body {
   }
 }
 .button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   text-decoration: inherit;
   background-color: #23232d;
   padding: 10px;
@@ -66,4 +67,7 @@ body {
 }
 .button:active {
   transform: translateY(1px);
+}
+.button svg {
+  margin-right: 8px;
 }
