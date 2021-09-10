@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@icons-pack/svelte-simple-icons": "^2.3.0",
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "sirv-cli": "^1.0.14"
   },
   "devDependencies": {
