@@ -1,5 +1,5 @@
 export type LinkButton = {
-    text: string;
-    type?: 'wiki' | 'discord';
-    url: string;
-}
+  text: string;
+  type?: "wiki" | "discord";
+  url: string;
+};

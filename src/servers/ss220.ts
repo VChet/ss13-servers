@@ -8,7 +8,7 @@ export const ss220Buttons: Array<LinkButton> = [
   { text: "Правила", url: "https://ss220.space/wiki/index.php/Правила_Сервера" },
   { text: "Карта Kerberos (Delta)", url: "https://affectedarc07.github.io/SS13WebMap/Paradise/Delta" },
   { text: "Карта Cyberiad (BoxStation)", url: "https://affectedarc07.github.io/SS13WebMap/Paradise/Cyberiad" },
-]
+];
 
 export const ss220Servers: Array<ServerModel> = [
   {

@@ -6,12 +6,7 @@
 
   const pluralize = function (number: number, titles: Array<string>) {
     const cases = [2, 0, 1, 1, 1, 2];
-    const text =
-      titles[
-        number % 100 > 4 && number % 100 < 20
-          ? 2
-          : cases[number % 10 < 5 ? number % 10 : 5]
-      ];
+    const text = titles[number % 100 > 4 && number % 100 < 20 ? 2 : cases[number % 10 < 5 ? number % 10 : 5]];
     return `${number} ${text}`;
   };
 </script>
@@ -53,13 +48,7 @@
       {data.description}
     </div>
   {/if}
-  <a
-    class="button servers__play"
-    title="Запустить Byond и подключиться"
-    href={data.url}
-  >
-    Играть
-  </a>
+  <a class="button servers__play" title="Запустить Byond и подключиться" href={data.url}>Играть</a>
 </div>
 
 <style lang="scss">

@@ -11,26 +11,25 @@ export const tauButtons: Array<LinkButton> = [
   { text: "Карта", url: "https://map.taucetistation.org" },
   { text: "Гайды", url: "https://wiki.taucetistation.org/Guides" },
   { text: "Музыка", url: "https://wiki.taucetistation.org/Music" },
-]
+];
 
 export const tauServers: Array<ServerModel> = [
   {
     name: "Tau Ceti Classic",
-    description: 'Основной сервер с наибольшим лимитом игроков и активным вниманием администрации',
+    description: "Основной сервер с наибольшим лимитом игроков и активным вниманием администрации",
     url: "byond://game.taucetistation.org:2506",
   },
   {
     name: "Tau Ceti Classic II",
-    description: 'Дополнительный сервер с меньшим ограничением на онлайн, меньшим участием администрации',
+    description: "Дополнительный сервер с меньшим ограничением на онлайн, меньшим участием администрации",
     url: "byond://game.taucetistation.org:2507",
   },
   {
     name: "Tau Ceti Classic III",
-    description: 'Сервер для новичков, выключены лимиты времени для профессий',
+    description: "Сервер для новичков, выключены лимиты времени для профессий",
     url: "byond://game.taucetistation.org:2508",
   },
 ];
-
 
 export async function fetchTauServer(url: string): Promise<Partial<ServerModel>> {
   const { data }: AxiosResponse<TauServer> = await axios.get(url);

@@ -6,7 +6,7 @@ export const onyxButtons: Array<LinkButton> = [
   { text: "Вики", type: "wiki", url: "https://wiki.ss13.ru" },
   { text: "Сайт", url: "https://ss13.ru" },
   { text: "Правила", url: "https://wiki.ss13.ru/index.php?title=Onyx_Rules" },
-]
+];
 
 export const onyxServers: Array<ServerModel> = [
   {
