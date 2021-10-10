@@ -1,4 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Exo+2&display=swap");
+@font-face {
+  font-family: "Exo 2";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("./fonts/Exo-2-Regular.woff2") format("woff2"), url("./fonts/Exo-2-Regular.woff") format("woff");
+}
 html,
 body {
   padding: 0;
