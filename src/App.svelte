@@ -10,18 +10,9 @@
 
   async function fetchTauServers() {
     const api = [
-      {
-        name: "Tau Ceti Classic",
-        url: "https://taucetistation.org/server/tauceti/json",
-      },
-      {
-        name: "Tau Ceti Classic II",
-        url: "https://taucetistation.org/server/tauceti2/json",
-      },
-      {
-        name: "Tau Ceti Classic III",
-        url: "https://taucetistation.org/server/tauceti3/json",
-      },
+      { name: "Tau Ceti Classic", url: "https://taucetistation.org/server/tauceti/json" },
+      { name: "Tau Ceti Classic II", url: "https://taucetistation.org/server/tauceti2/json" },
+      { name: "Tau Ceti Classic III", url: "https://taucetistation.org/server/tauceti3/json" },
     ];
     try {
       await Promise.all(
