@@ -1,5 +1,3 @@
-import axios from "axios";
-import type { AxiosResponse } from "axios";
 import type { ServerModel, TauServer } from "../types/Server";
 import type { LinkButton } from "../types/LinkButtons";
 
@@ -31,14 +29,18 @@ export const tauServers: Array<ServerModel> = [
   },
 ];
 
-export async function fetchTauServer(url: string): Promise<Partial<ServerModel>> {
-  const { data }: AxiosResponse<TauServer> = await axios.get(url);
-  return {
-    error: data.error,
-    build: data.version,
-    map: data.map_name,
-    mode: data.mode,
-    players: data.players,
-    duration: data.roundduration,
-  };
+export async function fetchTauServer(url: string): Promise<Partial<ServerModel> | void> {
+  return fetch(url)
+    .then((response) => response.json())
+    .then((data: TauServer) => ({
+      error: data.error,
+      build: data.version,
+      map: data.map_name,
+      mode: data.mode,
+      players: data.players,
+      duration: data.roundduration,
+    }))
+    .catch((error) => {
+      console.error(error);
+    });
 }
