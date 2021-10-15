@@ -53,38 +53,38 @@
 <main class="container">
   <h1>Space Station 13 RU Servers</h1>
   <section class="servers">
-    <div class="servers__header">
-      <h2>Tau Ceti</h2>
-      {#each tauButtons as button}
-        <Button data={button} />
-      {/each}
-      <button class="button" on:click={fetchTauServers}>🔄</button>
-    </div>
-    {#each tauServers as server}
-      <Server data={server} />
+    <h2>Tau Ceti</h2>
+    {#each tauButtons as button}
+      <Button data={button} />
     {/each}
+    <button class="button" on:click={fetchTauServers}>🔄</button>
+    <ul>
+      {#each tauServers as server}
+        <Server data={server} />
+      {/each}
+    </ul>
   </section>
   <section class="servers">
-    <div class="servers__header">
-      <h2>SS220</h2>
-      {#each ss220Buttons as button}
-        <Button data={button} />
-      {/each}
-    </div>
-    {#each ss220Servers as server}
-      <Server data={server} />
+    <h2>SS220</h2>
+    {#each ss220Buttons as button}
+      <Button data={button} />
     {/each}
+    <ul>
+      {#each ss220Servers as server}
+        <Server data={server} />
+      {/each}
+    </ul>
   </section>
   <section class="servers">
-    <div class="servers__header">
-      <h2>Chaotic Onyx</h2>
-      {#each onyxButtons as button}
-        <Button data={button} />
-      {/each}
-    </div>
-    {#each onyxServers as server}
-      <Server data={server} />
+    <h2>Chaotic Onyx</h2>
+    {#each onyxButtons as button}
+      <Button data={button} />
     {/each}
+    <ul>
+      {#each onyxServers as server}
+        <Server data={server} />
+      {/each}
+    </ul>
   </section>
   <section class="info">
     {#each infoButtons as button}
@@ -93,22 +93,31 @@
   </section>
 </main>
 
-<style>
-  .servers,
-  .info {
-    display: flex;
-    flex-flow: row wrap;
+<style lang="scss">
+  @mixin block {
     margin: 15px 0;
     background-color: #16161ce6;
     border: 1px solid #31313b;
     border-radius: 4px;
+    padding: 20px;
+  }
+  .servers {
+    @include block;
+    text-align: center;
+    h2 {
+      margin-top: 0;
+    }
+    ul {
+      margin: 20px 0;
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
   }
   .info {
-    padding: 20px;
+    @include block;
+    display: flex;
+    flex-flow: row wrap;
     justify-content: center;
-  }
-  .servers__header {
-    flex-basis: 100%;
-    text-align: center;
   }
 </style>

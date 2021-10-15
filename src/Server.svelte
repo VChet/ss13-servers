@@ -48,16 +48,14 @@
       {data.description}
     </div>
   {/if}
-  <a class="button servers__play" title="Запустить Byond и подключиться" href={data.url} rel="noopener">Играть</a>
+  <a class="button button--play" title="Запустить Byond и подключиться" href={data.url} rel="noopener">Играть</a>
 </div>
 
 <style lang="scss">
   .servers__block {
-    flex: 1 1 20%;
-    margin: 20px;
-    padding: 20px;
+    padding: 20px 30px;
     background-color: #1d1d24e1;
-    border-radius: 6px;
+    border-radius: 4px;
     border: 1px solid #31313b;
     display: flex;
     gap: 5px;
@@ -81,10 +79,11 @@
       font-size: 16px;
     }
   }
-  .servers__play {
+  .button--play {
     margin-top: 15px;
     display: block;
-    max-width: 300px;
+    width: 100%;
+    max-width: 150px;
     border: 1px solid rgb(70, 110, 110);
   }
 </style>
