@@ -11,7 +11,7 @@
   };
 </script>
 
-<div class="servers__block">
+<li class="servers__block">
   <h3>{data.name}</h3>
   {#if data.build}
     <div class="servers__build" title="Билд">{data.build}</div>
@@ -49,7 +49,7 @@
     </div>
   {/if}
   <a class="button button--play" title="Запустить Byond и подключиться" href={data.url} rel="noopener">Играть</a>
-</div>
+</li>
 
 <style lang="scss">
   .servers__block {
