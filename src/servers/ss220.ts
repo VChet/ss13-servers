@@ -29,15 +29,15 @@ export const ss220Servers: Array<ServerModel> = [
   },
   {
     name: "Whitelist Paradise",
-    description: "Доступ после 30 часов игры",
+    description: "Ежедневная ротация. Доступ после 30 часов игры через заявку в Discord",
     url: "byond://launch.ss220.space:7723",
     build: "Paradise",
-    map: "Kerberos",
+    map: "Kerberos/Cyberiad",
     mode: "secret",
   },
   {
     name: "Whitelist Sierra",
-    description: "Доступ после 30 часов игры",
+    description: "Доступ после 30 часов игры через заявку в Discord",
     url: "byond://launch.ss220.space:7725",
     build: "Infinity",
     map: "Sierra",
@@ -45,8 +45,9 @@ export const ss220Servers: Array<ServerModel> = [
   },
   {
     name: "Whitelist Prime",
-    description: "Ротация билдов. Нужно покупать допуск у стримеров",
+    description: "Допуск покупается у стримеров",
     url: "byond://launch.ss220.space:7722",
     build: "Paradise",
+    map: "Cyberiad",
   },
 ];
