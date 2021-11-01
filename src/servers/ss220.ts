@@ -16,7 +16,15 @@ export const ss220Servers: Array<ServerModel> = [
     description: "Основной",
     url: "byond://launch.ss220.space:7721",
     build: "Paradise",
-    map: "Kerberos",
+    map: "Delta",
+    mode: "secret",
+  },
+  {
+    name: "Second",
+    description: "Клон Main. Общая база персонажей",
+    url: "byond://launch.ss220.space:7726",
+    build: "Paradise",
+    map: "Delta",
     mode: "secret",
   },
   {
