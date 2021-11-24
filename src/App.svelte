@@ -1,11 +1,10 @@
 <script lang="ts">
   import { onMount } from "svelte";
-
-  import Server from "./Server.svelte";
   import Button from "./Button.svelte";
-  import { tauButtons, tauServers, fetchTauServer } from "./servers/tauCeti";
-  import { ss220Buttons, ss220Servers } from "./servers/ss220";
+  import Server from "./Server.svelte";
   import { onyxButtons, onyxServers } from "./servers/onyx";
+  import { ss220Buttons, ss220Servers } from "./servers/ss220";
+  import { fetchTauServer, tauButtons, tauServers } from "./servers/tauCeti";
   import type { LinkButton } from "./types/LinkButtons";
 
   async function fetchTauServers() {
@@ -34,18 +33,8 @@
   });
 
   const infoButtons: Array<LinkButton> = [
-    { text: "Paperwork Simulator", url: "http://ps.ss13.net" },
-    { text: "WebMap", url: "https://affectedarc07.github.io/SS13WebMap" },
-    {
-      text: "Вики /tg/ (EN)",
-      type: "wiki",
-      url: "https://tgstation13.org/wiki",
-    },
-    {
-      text: "Вики BeeStation (EN)",
-      type: "wiki",
-      url: "https://wiki.beestation13.com",
-    },
+    { text: "📝 Paperwork Simulator", url: "http://ps.ss13.net" },
+    { text: "🗺️ WebMap", url: "https://affectedarc07.github.io/SS13WebMap" },
   ];
 </script>
 

@@ -1,14 +1,14 @@
-import type { ServerModel, TauServer } from "../types/Server";
 import type { LinkButton } from "../types/LinkButtons";
+import type { ServerModel, TauServer } from "../types/Server";
 
 export const tauButtons: Array<LinkButton> = [
   { text: "Discord", type: "discord", url: "https://discord.gg/YCWRjkb" },
   { text: "Вики", type: "wiki", url: "https://wiki.taucetistation.org" },
-  { text: "Сайт", url: "https://taucetistation.org" },
-  { text: "Правила", url: "https://rules.taucetistation.org" },
-  { text: "Карта", url: "https://map.taucetistation.org" },
+  { text: "📃 Правила", url: "https://rules.taucetistation.org" },
+  { text: "🗺️ Карта", url: "https://affectedarc07.github.io/SS13WebMap/TauCetiClassic/BoxStation" },
   { text: "Гайды", url: "https://wiki.taucetistation.org/Guides" },
-  { text: "Музыка", url: "https://wiki.taucetistation.org/Music" },
+  { text: "🎵 Музыка", url: "https://wiki.taucetistation.org/Music" },
+  { text: "Сайт", url: "https://taucetistation.org" },
 ];
 
 export const tauServers: Array<ServerModel> = [

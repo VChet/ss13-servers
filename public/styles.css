@@ -70,6 +70,7 @@ ul {
   border-radius: 4px;
   color: #cacaca;
   font-size: inherit;
+  line-height: 1.2;
   cursor: pointer;
   transition: background-color 0.3s;
 }

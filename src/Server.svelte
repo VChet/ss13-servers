@@ -70,9 +70,6 @@
       color: #cacaca;
       font-size: 16px;
       line-height: 26px;
-      .button {
-        padding: 5px 10px;
-      }
     }
     .servers__description {
       color: #cacaca;
