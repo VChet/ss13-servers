@@ -31,6 +31,14 @@ export const ss220Servers: Array<ServerModel> = [
     mode: "secret",
   },
   {
+    name: "Vega",
+    description: "Третий сервер. Общая база персонажей",
+    url: "byond://play.ss220.space:7729",
+    build: "Paradise",
+    map: "Delta",
+    mode: "secret",
+  },
+  {
     name: "Extended",
     description: "Долгие раунды без раундстартовых антагонистов",
     url: "byond://ex.ss220.space:7724",
