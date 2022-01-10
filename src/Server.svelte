@@ -31,7 +31,7 @@
           {#if data.mode}({data.mode}){/if}
         </div>
       {/if}
-      {#if data.players >= 0}
+      {#if data.players && data.players >= 0}
         <div class="servers__players">
           {pluralize(data.players, ["игрок", "игрока", "игроков"])}
         </div>
