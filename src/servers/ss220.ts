@@ -39,6 +39,14 @@ export const ss220Servers: Array<ServerModel> = [
     mode: "secret",
   },
   {
+    name: "Cleo",
+    description: "Четвертый сервер. Общая база персонажей",
+    url: "byond://play.ss220.space:7728",
+    build: "Paradise",
+    map: "Delta",
+    mode: "secret",
+  },
+  {
     name: "Extended",
     description: "Долгие раунды без раундстартовых антагонистов",
     url: "byond://ex.ss220.space:7724",
@@ -68,5 +76,12 @@ export const ss220Servers: Array<ServerModel> = [
     url: "byond://play.ss220.space:7722",
     build: "Paradise",
     map: "Cyberiad",
+  },
+  {
+    name: "TGMC",
+    description: "TerraGov Marine Corps",
+    url: "byond://play.ss220.space:7727",
+    build: "TGMC",
+    buttons: [{ text: "Вики", type: "wiki", url: "https://tg.ss220.space" }],
   },
 ];
