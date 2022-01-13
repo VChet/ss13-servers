@@ -4,17 +4,33 @@
 
   export let data: ServerModel;
 
-  const pluralize = function (number: number, titles: Array<string>) {
+  function pluralize(number: number, titles: Array<string>) {
     const cases = [2, 0, 1, 1, 1, 2];
     const text = titles[number % 100 > 4 && number % 100 < 20 ? 2 : cases[number % 10 < 5 ? number % 10 : 5]];
     return `${number} ${text}`;
   };
+
+  function getBuildEmoji(build: string): string {
+    switch (build.toLowerCase()) {
+      case 'paradise':
+        return '🌴'
+      case 'infinity':
+        return '♾️'
+      case 'beestation':
+        return '🐝'
+      default:
+        return ''
+    }
+  }
 </script>
 
 <li class="servers__block">
   <h3>{data.name}</h3>
   {#if data.build}
-    <div class="servers__build" title="Билд">{data.build}</div>
+    <div class="servers__build" title="Билд">
+      {getBuildEmoji(data.build)}
+      {data.build}
+    </div>
   {/if}
   <div class="servers__data">
     {#if data.error}
