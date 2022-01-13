@@ -42,6 +42,17 @@
 <main class="container">
   <h1>Space Station 13 RU Servers</h1>
   <section class="servers">
+    <h2>SS220</h2>
+    {#each ss220Buttons as button}
+      <Button data={button} />
+    {/each}
+    <ul>
+      {#each ss220Servers as server}
+        <Server data={server} />
+      {/each}
+    </ul>
+  </section>
+  <section class="servers">
     <h2>Tau Ceti</h2>
     {#each tauButtons as button}
       <Button data={button} />
@@ -49,17 +60,6 @@
     <button class="button" on:click={fetchTauServers}>🔄</button>
     <ul>
       {#each tauServers as server}
-        <Server data={server} />
-      {/each}
-    </ul>
-  </section>
-  <section class="servers">
-    <h2>SS220</h2>
-    {#each ss220Buttons as button}
-      <Button data={button} />
-    {/each}
-    <ul>
-      {#each ss220Servers as server}
         <Server data={server} />
       {/each}
     </ul>
