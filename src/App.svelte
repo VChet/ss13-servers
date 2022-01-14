@@ -14,7 +14,10 @@
 
 <div class="stars" />
 <main class="container">
-  <h1>Space Station 13 RU Servers</h1>
+  <header class="header">
+    <h1>Space Station 13 RU Servers</h1>
+    <ExternalLink href="https://www.byond.com/download/">Get BYOND</ExternalLink>
+  </header>
   <section class="servers">
     <h2>SS220</h2>
     {#each ss220Links as link}
@@ -62,6 +65,11 @@
     border: 1px solid #31313b;
     border-radius: 4px;
     padding: 20px;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   .servers {
     @include block;
