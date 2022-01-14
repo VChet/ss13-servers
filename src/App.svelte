@@ -1,36 +1,10 @@
 <script lang="ts">
-  import { onMount } from "svelte";
   import Button from "./Button.svelte";
   import Server from "./Server.svelte";
   import { onyxButtons, onyxServers } from "./servers/onyx";
   import { ss220Buttons, ss220Servers } from "./servers/ss220";
-  import { fetchTauServer, tauButtons, tauServers } from "./servers/tauCeti";
+  import { tauButtons, tauServers } from "./servers/tauCeti";
   import type { LinkButton } from "./types/LinkButtons";
-
-  async function fetchTauServers() {
-    const api = [
-      { name: "Tau Ceti Classic", url: "https://taucetistation.org/server/tauceti/json" },
-      { name: "Tau Ceti Classic II", url: "https://taucetistation.org/server/tauceti2/json" },
-      { name: "Tau Ceti Classic III", url: "https://taucetistation.org/server/tauceti3/json" },
-    ];
-    try {
-      await Promise.all(
-        api.map((server) =>
-          fetchTauServer(server.url).then((data) => {
-            const index = tauServers.findIndex((ts) => ts.name === server.name);
-            tauServers[index] = { ...tauServers[index], ...data };
-          })
-        )
-      );
-    } catch ({ response }) {
-      console.error(response);
-    }
-  }
-
-  onMount(() => {
-    fetchTauServers();
-    setInterval(fetchTauServers, 10 * 60 * 1000); // every 10 minutes
-  });
 
   const infoButtons: Array<LinkButton> = [
     { text: "📝 Paperwork Simulator", url: "http://ps.ss13.net" },
@@ -57,7 +31,6 @@
     {#each tauButtons as button}
       <Button data={button} />
     {/each}
-    <button class="button" on:click={fetchTauServers}>🔄</button>
     <ul>
       {#each tauServers as server}
         <Server data={server} />

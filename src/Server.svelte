@@ -1,15 +1,28 @@
 <script lang="ts">
+  import { onMount } from "svelte";
   import Button from "./Button.svelte";
+  import { fetchTauServer } from "./servers/tauCeti";
   import { getBuildEmoji, pluralize } from "./utils";
   import type { ServerModel } from "./types/Server";
 
   export let data: ServerModel;
+  $: isTauServer = data.url.includes('tauceti')
 
+  async function fetchTauData() {
+    const response = await fetchTauServer(data.byond_id)
+    if (response) data = { ...data, ...response }
   }
+
+  onMount(async () => {
+    if (isTauServer) await fetchTauData()
+  });
 </script>
 
 <li class="servers__block">
   <h3>{data.name}</h3>
+  {#if isTauServer}
+    <button class="button servers__update" on:click={fetchTauData}>🔄</button>
+  {/if}
   {#if data.build}
     <div class="servers__build" title="Билд">
       {getBuildEmoji(data.build)}
@@ -53,6 +66,7 @@
 
 <style lang="scss">
   .servers__block {
+    position: relative;
     padding: 20px 30px;
     background-color: #1d1d24e1;
     border-radius: 4px;
@@ -65,6 +79,11 @@
     text-align: center;
     h3 {
       margin: 0;
+    }
+    .servers__update {
+      position: absolute;
+      top: 0;
+      right: 0;
     }
     .servers__data {
       color: #cacaca;

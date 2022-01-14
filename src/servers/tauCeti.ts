@@ -32,8 +32,21 @@ export const tauServers: Array<ServerModel> = [
   },
 ];
 
-export async function fetchTauServer(url: string): Promise<Partial<ServerModel> | void> {
-  return fetch(url)
+function getEndpoint(serverId: number): string {
+  switch (serverId) {
+    case 1181733894:
+      return "https://taucetistation.org/server/tauceti/json";
+    case 1240928380:
+      return "https://taucetistation.org/server/tauceti2/json";
+    case 977601732:
+      return "https://taucetistation.org/server/tauceti3/json";
+    default:
+      return "";
+  }
+}
+
+export function fetchTauServer(serverId: number): Promise<Partial<ServerModel> | void> {
+  return fetch(getEndpoint(serverId))
     .then((response) => response.json())
     .then((data: TauServer) => ({
       error: data.error,
