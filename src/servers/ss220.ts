@@ -15,7 +15,8 @@ export const ss220Buttons: Array<LinkButton> = [
 
 export const ss220Servers: Array<ServerModel> = [
   {
-    name: "Main",
+    byond_id: 752040047,
+    name: "Paradise Main",
     description: "Основной сервер",
     url: "byond://play.ss220.space:7721",
     build: "Paradise",
@@ -23,7 +24,8 @@ export const ss220Servers: Array<ServerModel> = [
     mode: "secret",
   },
   {
-    name: "Second",
+    byond_id: 2127956120,
+    name: "Paradise Secondary",
     description: "Второй сервер. Общая база персонажей",
     url: "byond://play.ss220.space:7726",
     build: "Paradise",
@@ -31,7 +33,8 @@ export const ss220Servers: Array<ServerModel> = [
     mode: "secret",
   },
   {
-    name: "Vega",
+    byond_id: 893329138,
+    name: "Paradise Vega",
     description: "Третий сервер. Общая база персонажей",
     url: "byond://play.ss220.space:7729",
     build: "Paradise",
@@ -39,7 +42,8 @@ export const ss220Servers: Array<ServerModel> = [
     mode: "secret",
   },
   {
-    name: "Cleo",
+    byond_id: 1448634978,
+    name: "Paradise Cleo",
     description: "Четвертый сервер. Общая база персонажей",
     url: "byond://play.ss220.space:7728",
     build: "Paradise",
@@ -47,7 +51,8 @@ export const ss220Servers: Array<ServerModel> = [
     mode: "secret",
   },
   {
-    name: "Extended",
+    byond_id: 1443289377,
+    name: "Paradise Extended eXperimental",
     description: "Долгие раунды без раундстартовых антагонистов",
     url: "byond://ex.ss220.space:7724",
     build: "Paradise",
@@ -55,7 +60,8 @@ export const ss220Servers: Array<ServerModel> = [
     mode: "extended",
   },
   {
-    name: "Whitelist Paradise",
+    byond_id: 2124444586,
+    name: "Paradise WL",
     description: "Ежедневная ротация. Требуется 30+ часов на Main/Second/EX",
     url: "byond://play.ss220.space:7723",
     build: "Paradise",
@@ -63,6 +69,7 @@ export const ss220Servers: Array<ServerModel> = [
     mode: "secret",
   },
   {
+    byond_id: 408186142,
     name: "Sierra",
     description: "Атмосферное и более требовательное РП",
     url: "byond://play.ss220.space:7725",
@@ -71,6 +78,7 @@ export const ss220Servers: Array<ServerModel> = [
     mode: "secret",
   },
   {
+    byond_id: 1691886814,
     name: "Whitelist Prime",
     description: "Допуск покупается у стримеров",
     url: "byond://play.ss220.space:7722",
@@ -78,7 +86,8 @@ export const ss220Servers: Array<ServerModel> = [
     map: "Cyberiad",
   },
   {
-    name: "TGMC",
+    byond_id: 1555823671,
+    name: "TerraGov Marine Corps",
     description: "TerraGov Marine Corps",
     url: "byond://play.ss220.space:7727",
     build: "TGMC",

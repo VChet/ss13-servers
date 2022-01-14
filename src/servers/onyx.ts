@@ -13,6 +13,7 @@ export const onyxButtons: Array<LinkButton> = [
 
 export const onyxServers: Array<ServerModel> = [
   {
+    byond_id: 1605602567,
     name: "Chaotic Onyx",
     description:
       "Классический дух оторванной от остального человечества станции, на которой вечно что-то идет не так и никто не знает, что с этим делать ",
@@ -20,6 +21,7 @@ export const onyxServers: Array<ServerModel> = [
     build: "OnyxBay",
   },
   {
+    byond_id: 48047157,
     name: "Eos Orbital Station",
     description:
       "Настоящий ролевой сервер про чрезвычайные ситуации с упором в отыгрыш интересных и запоминающихся персонажей",
@@ -27,6 +29,7 @@ export const onyxServers: Array<ServerModel> = [
     build: "OnyxBay",
   },
   {
+    byond_id: 159529174,
     name: "Crimson Dragon",
     description:
       "Квинтэссенция весёлого и динамичного безумия, заключенная внутри изолированной космической станции вместе с её параноидальным и зачастую крайне некомпетентным персоналом. Что может пойти не так?",

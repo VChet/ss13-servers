@@ -13,16 +13,19 @@ export const tauButtons: Array<LinkButton> = [
 
 export const tauServers: Array<ServerModel> = [
   {
+    byond_id: 1181733894,
     name: "Tau Ceti Classic",
     description: "Основной сервер с наибольшим лимитом игроков и активным вниманием администрации",
     url: "byond://game.taucetistation.org:2506",
   },
   {
+    byond_id: 1240928380,
     name: "Tau Ceti Classic II",
     description: "Дополнительный сервер с меньшим ограничением на онлайн, меньшим участием администрации",
     url: "byond://game.taucetistation.org:2507",
   },
   {
+    byond_id: 977601732,
     name: "Tau Ceti Classic III",
     description: "Сервер для новичков, выключены лимиты времени для профессий",
     url: "byond://game.taucetistation.org:2508",
