@@ -68,12 +68,16 @@
   }
   .header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
   }
   .community {
     @include card;
     text-align: center;
+    @media (max-width: 425px) {
+      padding: 10px;
+    }
     h2 {
       margin-top: 0;
     }
@@ -81,7 +85,7 @@
       margin: 20px 0;
       display: grid;
       gap: 30px;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
   }
   .info {
