@@ -1,4 +1,4 @@
-import type { LinkButton } from "./LinkButtons";
+import type { Link } from "./Link";
 
 export interface TauServer {
   version: string;
@@ -30,7 +30,7 @@ export interface ServerModel {
   /** Server description */
   description?: string;
   /** Additional server related buttons */
-  buttons?: Array<LinkButton>;
+  buttons?: Array<Link>;
   /** Build */
   build?: string;
   /** Current map */

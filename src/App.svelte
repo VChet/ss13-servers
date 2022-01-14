@@ -1,12 +1,12 @@
 <script lang="ts">
-  import Button from "./Button.svelte";
+  import ExternalLink from "./ExternalLink.svelte";
   import Server from "./Server.svelte";
-  import { onyxButtons, onyxServers } from "./servers/onyx";
-  import { ss220Buttons, ss220Servers } from "./servers/ss220";
-  import { tauButtons, tauServers } from "./servers/tauCeti";
-  import type { LinkButton } from "./types/LinkButtons";
+  import { onyxLinks, onyxServers } from "./servers/onyx";
+  import { ss220Links, ss220Servers } from "./servers/ss220";
+  import { tauLinks, tauServers } from "./servers/tauCeti";
+  import type { Link } from "./types/Link";
 
-  const infoButtons: Array<LinkButton> = [
+  const infoLinks: Array<Link> = [
     { text: "📝 Paperwork Simulator", url: "http://ps.ss13.net" },
     { text: "🗺️ WebMap", url: "https://affectedarc07.github.io/SS13WebMap" },
   ];
@@ -17,8 +17,8 @@
   <h1>Space Station 13 RU Servers</h1>
   <section class="servers">
     <h2>SS220</h2>
-    {#each ss220Buttons as button}
-      <Button data={button} />
+    {#each ss220Links as link}
+      <ExternalLink href={link.url} icon={link.icon}>{link.text}</ExternalLink>
     {/each}
     <ul>
       {#each ss220Servers as server}
@@ -28,8 +28,8 @@
   </section>
   <section class="servers">
     <h2>Tau Ceti</h2>
-    {#each tauButtons as button}
-      <Button data={button} />
+    {#each tauLinks as link}
+      <ExternalLink href={link.url} icon={link.icon}>{link.text}</ExternalLink>
     {/each}
     <ul>
       {#each tauServers as server}
@@ -39,8 +39,8 @@
   </section>
   <section class="servers">
     <h2>Chaotic Onyx</h2>
-    {#each onyxButtons as button}
-      <Button data={button} />
+    {#each onyxLinks as link}
+      <ExternalLink href={link.url} icon={link.icon}>{link.text}</ExternalLink>
     {/each}
     <ul>
       {#each onyxServers as server}
@@ -49,8 +49,8 @@
     </ul>
   </section>
   <section class="info">
-    {#each infoButtons as button}
-      <Button data={button} />
+    {#each infoLinks as link}
+      <ExternalLink href={link.url} icon={link.icon}>{link.text}</ExternalLink>
     {/each}
   </section>
 </main>

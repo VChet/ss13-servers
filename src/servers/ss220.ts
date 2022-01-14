@@ -1,16 +1,16 @@
-import type { LinkButton } from "../types/LinkButtons";
+import type { Link } from "../types/Link";
 import type { ServerModel } from "../types/Server";
 
-export const ss220Buttons: Array<LinkButton> = [
-  { text: "Discord", type: "discord", url: "https://discord.ss220.space" },
-  { text: "Вики Paradise", type: "wiki", url: "https://wiki.ss220.space/index.php/Правила_Сервера" },
-  { text: "Вики Infinity", type: "wiki", url: "https://sierra.ss220.space/index.php/Правила_Сервера" },
+export const ss220Links: Array<Link> = [
+  { text: "Discord", icon: "discord", url: "https://discord.ss220.space" },
+  { text: "Вики Paradise", icon: "wiki", url: "https://wiki.ss220.space/index.php/Правила_Сервера" },
+  { text: "Вики Infinity", icon: "wiki", url: "https://sierra.ss220.space/index.php/Правила_Сервера" },
   { text: "Гайды Paradise", url: "https://wiki.ss220.space/index.php/Руководства" },
-  { text: "📃 Правила Paradise", url: "http://wiki.ss220.space/index.php/Правила_Сервера" },
-  { text: "📃 Правила Infinity", url: "https://sierra.ss220.space/index.php/Правила_Сервера" },
-  { text: "🗺️ Карта Cyberiad", url: "https://affectedarc07.github.io/SS13WebMap/Paradise/Cyberiad" },
-  { text: "🗺️ Карта Delta", url: "https://affectedarc07.github.io/SS13WebMap/Paradise/Delta" },
-  { text: "🗺️ Карта Sierra", url: "https://sierra.ss220.space/index.php/ИКН_Сьерра" },
+  { text: "Правила Paradise", icon: "rules", url: "http://wiki.ss220.space/index.php/Правила_Сервера" },
+  { text: "Правила Infinity", icon: "rules", url: "https://sierra.ss220.space/index.php/Правила_Сервера" },
+  { text: "Карта Cyberiad", icon: "map", url: "https://affectedarc07.github.io/SS13WebMap/Paradise/Cyberiad" },
+  { text: "Карта Delta", icon: "map", url: "https://affectedarc07.github.io/SS13WebMap/Paradise/Delta" },
+  { text: "Карта Sierra", icon: "map", url: "https://sierra.ss220.space/index.php/ИКН_Сьерра" },
 ];
 
 export const ss220Servers: Array<ServerModel> = [
@@ -91,6 +91,6 @@ export const ss220Servers: Array<ServerModel> = [
     description: "TerraGov Marine Corps",
     url: "byond://play.ss220.space:7727",
     build: "TGMC",
-    buttons: [{ text: "Вики", type: "wiki", url: "https://tg.ss220.space" }],
+    buttons: [{ text: "Вики", icon: "wiki", url: "https://tg.ss220.space" }],
   },
 ];

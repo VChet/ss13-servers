@@ -1,13 +1,13 @@
-import type { LinkButton } from "../types/LinkButtons";
+import type { Link } from "../types/Link";
 import type { ServerModel } from "../types/Server";
 
-export const onyxButtons: Array<LinkButton> = [
-  { text: "Discord", type: "discord", url: "https://discord.gg/4JFNdbk" },
-  { text: "Вики OnyxBay", type: "wiki", url: "https://wiki.ss13.ru" },
-  { text: "Вики BeeStation", type: "wiki", url: "https://bloodrave.ru" },
+export const onyxLinks: Array<Link> = [
+  { text: "Discord", icon: "discord", url: "https://discord.gg/4JFNdbk" },
+  { text: "Вики OnyxBay", icon: "wiki", url: "https://wiki.ss13.ru" },
+  { text: "Вики BeeStation", icon: "wiki", url: "https://bloodrave.ru" },
   { text: "Гайды OnyxBay", url: "https://wiki.ss13.ru/index.php?title=Guides" },
   { text: "Гайды BeeStation", url: "https://bloodrave.ru/Руководства" },
-  { text: "📃 Правила", url: "https://wiki.ss13.ru/index.php?title=Onyx_Rules" },
+  { text: "Правила", icon: "rules", url: "https://wiki.ss13.ru/index.php?title=Onyx_Rules" },
   { text: "Сайт", url: "https://ss13.ru" },
 ];
 

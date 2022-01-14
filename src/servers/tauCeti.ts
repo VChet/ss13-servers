@@ -1,13 +1,13 @@
-import type { LinkButton } from "../types/LinkButtons";
+import type { Link } from "../types/Link";
 import type { ServerModel, TauServer } from "../types/Server";
 
-export const tauButtons: Array<LinkButton> = [
-  { text: "Discord", type: "discord", url: "https://discord.gg/YCWRjkb" },
-  { text: "Вики", type: "wiki", url: "https://wiki.taucetistation.org" },
-  { text: "📃 Правила", url: "https://rules.taucetistation.org" },
-  { text: "🗺️ Карта", url: "https://affectedarc07.github.io/SS13WebMap/TauCetiClassic/BoxStation" },
+export const tauLinks: Array<Link> = [
+  { text: "Discord", icon: "discord", url: "https://discord.gg/YCWRjkb" },
+  { text: "Вики", icon: "wiki", url: "https://wiki.taucetistation.org" },
+  { text: "Правила", icon: "rules", url: "https://rules.taucetistation.org" },
+  { text: "Карта", icon: "map", url: "https://affectedarc07.github.io/SS13WebMap/TauCetiClassic/BoxStation" },
   { text: "Гайды", url: "https://wiki.taucetistation.org/Guides" },
-  { text: "🎵 Музыка", url: "https://wiki.taucetistation.org/Music" },
+  { text: "Музыка", icon: "music", url: "https://wiki.taucetistation.org/Music" },
   { text: "Сайт", url: "https://taucetistation.org" },
 ];
 

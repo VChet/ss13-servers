@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import Button from "./Button.svelte";
+  import ExternalLink from "./ExternalLink.svelte";
   import { fetchTauServer } from "./servers/tauCeti";
   import { getBuildEmoji, pluralize } from "./utils";
   import type { ServerModel } from "./types/Server";
@@ -35,7 +35,7 @@
     {:else}
       {#if data.buttons?.length}
         {#each data.buttons as button}
-          <Button data={button} />
+          <ExternalLink href={button.url} icon={button.icon}>{button.text}</ExternalLink>
         {/each}
       {/if}
       {#if data.map || data.mode}

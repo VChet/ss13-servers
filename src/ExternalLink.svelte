@@ -1,18 +1,21 @@
 <script lang="ts">
-  import type { LinkButton } from "./types/LinkButtons";
-
-  export let data: LinkButton;
+  export let href: string;
+  export let icon: string | undefined = undefined;
 </script>
 
 <a
   class="button"
-  class:wiki={data.type === "wiki"}
-  class:discord={data.type === "discord"}
-  href={data.url}
+  class:wiki={icon === "wiki"}
+  class:discord={icon === "discord"}
+  href={href}
   target="_blank"
   rel="noopener"
 >
-  {data.text}
+  {#if icon === 'rules'}📃
+  {:else if icon === 'map'}🗺️
+  {:else if icon === 'music'}🎵
+  {/if}
+  <slot/>
 </a>
 
 <style lang="scss">
