@@ -18,34 +18,34 @@
     <h1>Space Station 13 RU Servers</h1>
     <ExternalLink href="https://www.byond.com/download/">Get BYOND</ExternalLink>
   </header>
-  <section class="servers">
+  <section class="community">
     <h2>SS220</h2>
     {#each ss220Links as link}
       <ExternalLink href={link.url} icon={link.icon}>{link.text}</ExternalLink>
     {/each}
-    <ul>
+    <ul class="community__servers">
       {#each ss220Servers as server}
         <Server data={server} />
       {/each}
     </ul>
   </section>
-  <section class="servers">
+  <section class="community">
     <h2>Tau Ceti</h2>
     {#each tauLinks as link}
       <ExternalLink href={link.url} icon={link.icon}>{link.text}</ExternalLink>
     {/each}
-    <ul>
+    <ul class="community__servers">
       {#each tauServers as server}
         <Server data={server} />
       {/each}
     </ul>
   </section>
-  <section class="servers">
+  <section class="community">
     <h2>Chaotic Onyx</h2>
     {#each onyxLinks as link}
       <ExternalLink href={link.url} icon={link.icon}>{link.text}</ExternalLink>
     {/each}
-    <ul>
+    <ul class="community__servers">
       {#each onyxServers as server}
         <Server data={server} />
       {/each}
@@ -59,7 +59,7 @@
 </main>
 
 <style lang="scss">
-  @mixin block {
+  @mixin card {
     margin: 15px 0;
     background-color: #16161ce6;
     border: 1px solid #31313b;
@@ -71,13 +71,13 @@
     justify-content: space-between;
     align-items: center;
   }
-  .servers {
-    @include block;
+  .community {
+    @include card;
     text-align: center;
     h2 {
       margin-top: 0;
     }
-    ul {
+    &__servers {
       margin: 20px 0;
       display: grid;
       gap: 30px;
@@ -85,7 +85,7 @@
     }
   }
   .info {
-    @include block;
+    @include card;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;

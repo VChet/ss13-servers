@@ -1,16 +1,17 @@
 <script lang="ts">
   export let href: string;
   export let icon: string | undefined = undefined;
+
+  $: classList = () => {
+    const classes = {
+      'button': true,
+      [`button--${icon}`]: !!icon
+    };
+    return Object.keys(classes).filter(className => classes[className]).join(' ');
+  }
 </script>
 
-<a
-  class="button"
-  class:wiki={icon === "wiki"}
-  class:discord={icon === "discord"}
-  href={href}
-  target="_blank"
-  rel="noopener"
->
+<a class={classList()} href={href} target="_blank" rel="noopener">
   {#if icon === 'rules'}📃
   {:else if icon === 'map'}🗺️
   {:else if icon === 'music'}🎵
@@ -20,18 +21,18 @@
 
 <style lang="scss">
   .button {
-    @mixin button-icon {
+    @mixin icon {
       padding-left: 32px;
       background-position: 8px center;
       background-repeat: no-repeat;
       background-size: 16px;
     }
-    &.wiki {
-      @include button-icon;
+    &--wiki {
+      @include icon;
       background-image: url("/assets/wikipedia.svg");
     }
-    &.discord {
-      @include button-icon;
+    &--discord {
+      @include icon;
       background-image: url("/assets/discord.svg");
     }
   }

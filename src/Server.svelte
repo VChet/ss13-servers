@@ -18,18 +18,18 @@
   });
 </script>
 
-<li class="servers__block">
-  <h3>{data.name}</h3>
+<li class="server">
+  <h3 class="server__name">{data.name}</h3>
   {#if isTauServer}
-    <button class="button servers__update" on:click={fetchTauData}>🔄</button>
+    <button class="button server__update" on:click={fetchTauData}>🔄</button>
   {/if}
   {#if data.build}
-    <div class="servers__build" title="Билд">
+    <div class="server__build" title="Билд">
       {getBuildEmoji(data.build)}
       {data.build}
     </div>
   {/if}
-  <div class="servers__data">
+  <div class="server__data">
     {#if data.error}
       NO DATA
     {:else}
@@ -39,35 +39,35 @@
         {/each}
       {/if}
       {#if data.map || data.mode}
-        <div class="servers__mode" title="Карта">
+        <div class="server__data-mode" title="Карта">
           {#if data.map}{data.map}{/if}
           {#if data.mode}({data.mode}){/if}
         </div>
       {/if}
       {#if data.players && data.players >= 0}
-        <div class="servers__players">
+        <div class="servers__data-players">
           {pluralize(data.players, ["игрок", "игрока", "игроков"])}
         </div>
       {/if}
       {#if data.duration}
-        <div class="servers__round-time">
+        <div class="servers__data-round-time">
           Продолжительность: {data.duration}
         </div>
       {/if}
     {/if}
   </div>
   {#if data.description}
-    <div class="servers__description">
+    <div class="server__description">
       {data.description}
     </div>
   {/if}
-  <a class="button button--play" title="Запустить Byond и подключиться" href={data.url} rel="noopener">Играть</a>
+  <a class="button server__play" title="Запустить Byond и подключиться" href={data.url} rel="noopener">Играть</a>
 </li>
 
 <style lang="scss">
-  .servers__block {
+  .server {
     position: relative;
-    padding: 20px 30px;
+    padding: 16px 20px;
     background-color: #1d1d24e1;
     border-radius: 4px;
     border: 1px solid #31313b;
@@ -77,29 +77,29 @@
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    h3 {
+    &__name {
       margin: 0;
     }
-    .servers__update {
+    &__update {
       position: absolute;
       top: 0;
       right: 0;
     }
-    .servers__data {
+    &__data {
       color: #cacaca;
       font-size: 16px;
       line-height: 26px;
     }
-    .servers__description {
+    &__description {
       color: #cacaca;
       font-size: 16px;
     }
-  }
-  .button--play {
-    margin-top: 15px;
-    display: block;
-    width: 100%;
-    max-width: 150px;
-    border: 1px solid rgb(70, 110, 110);
+    &__play {
+      margin-top: 15px;
+      display: block;
+      width: 100%;
+      max-width: 150px;
+      border: 1px solid rgb(70, 110, 110);
+    }
   }
 </style>
