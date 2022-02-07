@@ -7,31 +7,22 @@
   },
   "license": "CC-BY-SA-4.0",
   "author": "VChet",
+  "type": "module",
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public --no-clear",
+    "build": "vite build",
+    "dev": "vite",
+    "start": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
-  "dependencies": {
-    "sirv-cli": "^1.0.14"
-  },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^21.0.1",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^13.0.6",
-    "@rollup/plugin-typescript": "^8.3.0",
-    "@tsconfig/svelte": "^2.0.1",
-    "rollup": "^2.60.1",
-    "rollup-plugin-css-only": "^3.1.0",
-    "rollup-plugin-livereload": "^2.0.5",
-    "rollup-plugin-svelte": "^7.1.0",
-    "rollup-plugin-terser": "^7.0.2",
-    "sass": "^1.43.4",
-    "svelte": "^3.44.2",
-    "svelte-check": "^2.2.10",
-    "svelte-preprocess": "^4.9.8",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.37",
+    "@tsconfig/svelte": "^3.0.0",
+    "sass": "^1.49.7",
+    "svelte": "^3.46.4",
+    "svelte-check": "^2.4.3",
+    "svelte-preprocess": "^4.10.2",
     "tslib": "^2.3.1",
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.5",
+    "vite": "^2.7.13"
   }
 }

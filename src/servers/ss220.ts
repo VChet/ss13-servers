@@ -1,5 +1,5 @@
-import type { Link } from "../types/Link";
-import type { ServerModel } from "../types/Server";
+import type { Link } from "@/types/Link";
+import type { ServerModel } from "@/types/Server";
 
 export const ss220Links: Array<Link> = [
   { text: "Discord", icon: "discord", url: "https://discord.ss220.space" },

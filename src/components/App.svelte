@@ -1,10 +1,10 @@
 <script lang="ts">
-  import ExternalLink from "./ExternalLink.svelte";
-  import Server from "./Server.svelte";
-  import { onyxLinks, onyxServers } from "./servers/onyx";
-  import { ss220Links, ss220Servers } from "./servers/ss220";
-  import { tauLinks, tauServers } from "./servers/tauCeti";
-  import type { Link } from "./types/Link";
+  import ExternalLink from "@/components/ExternalLink.svelte";
+  import Server from "@/components/Server.svelte";
+  import { onyxLinks, onyxServers } from "@/servers/onyx";
+  import { ss220Links, ss220Servers } from "@/servers/ss220";
+  import { tauLinks, tauServers } from "@/servers/tauCeti";
+  import type { Link } from "@/types/Link";
 
   const infoLinks: Array<Link> = [
     { text: "📝 Paperwork Simulator", url: "http://ps.ss13.net" },
@@ -16,7 +16,7 @@
 <main class="container">
   <header class="header">
     <h1>Space Station 13 RU Servers</h1>
-    <ExternalLink href="https://www.byond.com/download/">Get BYOND</ExternalLink>
+    <ExternalLink href="https://www.byond.com/download/">Загрузить BYOND</ExternalLink>
   </header>
   <section class="community">
     <h2>SS220</h2>

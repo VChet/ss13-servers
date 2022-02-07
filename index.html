@@ -10,7 +10,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Space Station 13 Servers" />
     <meta property="og:description" content="Список серверов Space Station 13" />
-    <meta property="og:url" content="https://ss13-servers.vercel.app" />
+    <meta property="og:url" content="https://ss13-servers.netlify.app" />
     <meta
       property="og:image"
       content="https://raw.githubusercontent.com/VChet/ss13-servers/master/public/assets/og.png"
@@ -19,12 +19,8 @@
 
     <link rel="preload" href="./fonts/Exo-2-Regular.woff2" as="font" crossorigin="anonymous" />
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
-    <link rel="stylesheet" href="./styles.css" />
-
-    <link rel="stylesheet" href="./build/bundle.css" />
-    <script defer src="./build/bundle.js"></script>
-    <script defer src="./counter.dev.js"></script>
   </head>
-
-  <body></body>
+  <body>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>

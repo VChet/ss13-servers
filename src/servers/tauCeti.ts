@@ -1,5 +1,5 @@
-import type { Link } from "../types/Link";
-import type { ServerModel, TauServer } from "../types/Server";
+import type { Link } from "@/types/Link";
+import type { ServerModel, TauServer } from "@/types/Server";
 
 export const tauLinks: Array<Link> = [
   { text: "Discord", icon: "discord", url: "https://discord.gg/YCWRjkb" },

@@ -1,20 +1,20 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import ExternalLink from "./ExternalLink.svelte";
-  import { fetchTauServer } from "./servers/tauCeti";
-  import { getBuildEmoji, pluralize } from "./utils";
-  import type { ServerModel } from "./types/Server";
+  import ExternalLink from "@/components/ExternalLink.svelte";
+  import { fetchTauServer } from "@/servers/tauCeti";
+  import { getBuildEmoji, pluralize } from "@/utils";
+  import type { ServerModel } from "@/types/Server";
 
   export let data: ServerModel;
-  $: isTauServer = data.url.includes('tauceti')
+  $: isTauServer = data.url.includes("tauceti");
 
   async function fetchTauData() {
-    const response = await fetchTauServer(data.byond_id)
-    if (response) data = { ...data, ...response }
+    const response = await fetchTauServer(data.byond_id);
+    if (response) data = { ...data, ...response };
   }
 
   onMount(async () => {
-    if (isTauServer) await fetchTauData()
+    if (isTauServer) await fetchTauData();
   });
 </script>
 

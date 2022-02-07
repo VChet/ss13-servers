@@ -1,4 +1,4 @@
-import type { Link } from "./Link";
+import type { Link } from "@/components/Link";
 
 export interface TauServer {
   version: string;

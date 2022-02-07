@@ -4,19 +4,21 @@
 
   $: classList = () => {
     const classes = {
-      'button': true,
-      [`button--${icon}`]: !!icon
+      button: true,
+      [`button--${icon}`]: !!icon,
     };
-    return Object.keys(classes).filter(className => classes[className]).join(' ');
-  }
+    return Object.keys(classes)
+      .filter((className) => classes[className])
+      .join(" ");
+  };
 </script>
 
-<a class={classList()} href={href} target="_blank" rel="noopener">
-  {#if icon === 'rules'}📃
-  {:else if icon === 'map'}🗺️
-  {:else if icon === 'music'}🎵
+<a class={classList()} {href} target="_blank" rel="noopener">
+  {#if icon === "rules"}📃
+  {:else if icon === "map"}🗺️
+  {:else if icon === "music"}🎵
   {/if}
-  <slot/>
+  <slot />
 </a>
 
 <style lang="scss">
