@@ -22,7 +22,7 @@ export interface TauServer {
 
 export interface ServerModel {
   /** Byond World Id */
-  byond_id: number;
+  byond_id?: number;
   /** Server name */
   name: string;
   /** Byond server URL */

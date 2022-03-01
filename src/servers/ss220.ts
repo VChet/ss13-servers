@@ -88,9 +88,15 @@ export const ss220Servers: Array<ServerModel> = [
   {
     byond_id: 1555823671,
     name: "TerraGov Marine Corps",
-    description: "TerraGov Marine Corps",
+    description: "Тактическая командная РП игра в жанре шутера в сеттинге про чужих",
     url: "byond://play.ss220.space:7727",
     build: "TGMC",
     buttons: [{ text: "Вики", icon: "wiki", url: "https://tg.ss220.space" }],
+  },
+  {
+    name: "TG",
+    description: "На пути к MRP",
+    url: "byond://play.ss220.space:7730",
+    build: "TG Station",
   },
 ];

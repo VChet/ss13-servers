@@ -12,6 +12,8 @@ export function getBuildEmoji(build: string): string {
       return "♾️";
     case "beestation":
       return "🐝";
+    case "tgmc":
+      return "👨‍🚀";
     default:
       return "";
   }
