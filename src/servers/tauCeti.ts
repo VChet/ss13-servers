@@ -13,19 +13,19 @@ export const tauLinks: Array<Link> = [
 
 export const tauServers: Array<ServerModel> = [
   {
-    byond_id: 1181733894,
+    byond_id: 86267430,
     name: "Tau Ceti Classic",
     description: "Основной сервер с наибольшим лимитом игроков и активным вниманием администрации",
     url: "byond://game.taucetistation.org:2506",
   },
   {
-    byond_id: 1240928380,
+    byond_id: 1765697859,
     name: "Tau Ceti Classic II",
     description: "Дополнительный сервер с меньшим ограничением на онлайн, меньшим участием администрации",
     url: "byond://game.taucetistation.org:2507",
   },
   {
-    byond_id: 977601732,
+    byond_id: 443681219,
     name: "Tau Ceti Classic III",
     description: "Сервер для новичков, выключены лимиты времени для профессий",
     url: "byond://game.taucetistation.org:2508",
@@ -34,11 +34,11 @@ export const tauServers: Array<ServerModel> = [
 
 function getEndpoint(serverId: number): string {
   switch (serverId) {
-    case 1181733894:
+    case 86267430:
       return "https://taucetistation.org/server/tauceti/json";
-    case 1240928380:
+    case 1765697859:
       return "https://taucetistation.org/server/tauceti2/json";
-    case 977601732:
+    case 443681219:
       return "https://taucetistation.org/server/tauceti3/json";
     default:
       return "";
