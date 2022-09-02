@@ -53,7 +53,7 @@ export const ss220Servers: Array<ServerModel> = [
   {
     byond_id: 2110023106,
     name: "Paradise Extended eXperimental",
-    description: "Долгие раунды без раундстартовых антагонистов",
+    description: "Долгие раунды без раундстартовых антагов",
     url: "byond://ex.ss220.space:7724",
     build: "Paradise",
     map: "Cyberiad",
@@ -62,7 +62,7 @@ export const ss220Servers: Array<ServerModel> = [
   {
     byond_id: 1304658937,
     name: "Paradise WL",
-    description: "Ежедневная ротация. Требуется 30+ часов на Main/Second/EX",
+    description: "Ежедневная ротация. Требуется 75+ часов на Main/Secondary/Extended",
     url: "byond://play.ss220.space:7723",
     build: "Paradise",
     map: "Delta/Cyberiad",
