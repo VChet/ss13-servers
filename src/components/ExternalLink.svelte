@@ -11,7 +11,7 @@
   };
 </script>
 
-<a class={classList()} {href} target="_blank" rel="noopener">
+<a class={classList()} {href} target="_blank" rel="noopener noreferrer">
   {#if icon === "rules"}📃
   {:else if icon === "map"}🗺️
   {:else if icon === "music"}🎵
