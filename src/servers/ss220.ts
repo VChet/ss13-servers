@@ -6,8 +6,6 @@ export const ss220Links: Array<Link> = [
   { text: "Вики Paradise", icon: "wiki", url: "https://wiki.ss220.space/index.php/Правила_Сервера" },
   { text: "Вики Infinity", icon: "wiki", url: "https://sierra.ss220.space/index.php/Правила_Сервера" },
   { text: "Гайды Paradise", url: "https://wiki.ss220.space/index.php/Руководства" },
-  { text: "Правила Paradise", icon: "rules", url: "http://wiki.ss220.space/index.php/Правила_Сервера" },
-  { text: "Правила Infinity", icon: "rules", url: "https://sierra.ss220.space/index.php/Правила_Сервера" },
   { text: "Карта Cyberiad", icon: "map", url: "https://affectedarc07.github.io/SS13WebMap/Paradise/Cyberiad" },
   { text: "Карта Delta", icon: "map", url: "https://affectedarc07.github.io/SS13WebMap/Paradise/Delta" },
   { text: "Карта Sierra", icon: "map", url: "https://sierra.ss220.space/index.php/ИКН_Сьерра" },
@@ -22,6 +20,7 @@ export const ss220Servers: Array<ServerModel> = [
     build: "Paradise",
     map: "Delta",
     mode: "secret",
+    buttons: [{ text: "Правила Paradise", icon: "rules", url: "http://wiki.ss220.space/index.php/Правила_Сервера" }],
   },
   {
     byond_id: 282453224,
@@ -31,6 +30,7 @@ export const ss220Servers: Array<ServerModel> = [
     build: "Paradise",
     map: "Delta",
     mode: "secret",
+    buttons: [{ text: "Правила Paradise", icon: "rules", url: "http://wiki.ss220.space/index.php/Правила_Сервера" }],
   },
   {
     byond_id: 1011094487,
@@ -40,6 +40,7 @@ export const ss220Servers: Array<ServerModel> = [
     build: "Paradise",
     map: "Delta",
     mode: "secret",
+    buttons: [{ text: "Правила Paradise", icon: "rules", url: "http://wiki.ss220.space/index.php/Правила_Сервера" }],
   },
   {
     byond_id: 1914061651,
@@ -49,6 +50,7 @@ export const ss220Servers: Array<ServerModel> = [
     build: "Paradise",
     map: "Delta",
     mode: "secret",
+    buttons: [{ text: "Правила Paradise", icon: "rules", url: "http://wiki.ss220.space/index.php/Правила_Сервера" }],
   },
   {
     byond_id: 2110023106,
@@ -58,6 +60,7 @@ export const ss220Servers: Array<ServerModel> = [
     build: "Paradise",
     map: "Cyberiad",
     mode: "extended",
+    buttons: [{ text: "Правила Paradise", icon: "rules", url: "http://wiki.ss220.space/index.php/Правила_Сервера" }],
   },
   {
     byond_id: 1304658937,
@@ -67,6 +70,7 @@ export const ss220Servers: Array<ServerModel> = [
     build: "Paradise",
     map: "Delta/Cyberiad",
     mode: "secret",
+    buttons: [{ text: "Правила Paradise", icon: "rules", url: "http://wiki.ss220.space/index.php/Правила_Сервера" }],
   },
   {
     byond_id: 189414552,
@@ -76,6 +80,7 @@ export const ss220Servers: Array<ServerModel> = [
     build: "Infinity",
     map: "Sierra",
     mode: "secret",
+    buttons: [{ text: "Правила Infinity", icon: "rules", url: "https://sierra.ss220.space/index.php/Правила_Сервера" }],
   },
   {
     byond_id: 9225362,
@@ -85,6 +90,7 @@ export const ss220Servers: Array<ServerModel> = [
     build: "Paradise",
     map: "Cyberiad",
     mode: "secret",
+    buttons: [{ text: "Правила Paradise", icon: "rules", url: "http://wiki.ss220.space/index.php/Правила_Сервера" }],
   },
   {
     byond_id: 429929376,
@@ -92,7 +98,10 @@ export const ss220Servers: Array<ServerModel> = [
     description: "Тактическая командная РП игра в жанре шутера в сеттинге про чужих",
     url: "byond://ru.game.ss220.space:7727",
     build: "TGMC",
-    buttons: [{ text: "Вики", icon: "wiki", url: "https://tg.ss220.space" }],
+    buttons: [
+      { text: "Вики", icon: "wiki", url: "https://tg.ss220.space" },
+      { text: "Правила TGMC", icon: "rules", url: "https://tg.ss220.space/index.php/TGMC:Rules" },
+    ],
   },
   {
     byond_id: 1176035444,
@@ -101,5 +110,6 @@ export const ss220Servers: Array<ServerModel> = [
     url: "byond://ru.game.ss220.space:7730",
     build: "TG Station",
     map: "MetaStation",
+    buttons: [{ text: "Правила TG", icon: "rules", url: "https://tg.ss220.space/index.php/Rules" }],
   },
 ];
