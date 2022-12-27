@@ -3,13 +3,11 @@
   export let icon: string | undefined = undefined;
 
   $: classList = () => {
-    const classes = {
-      button: true,
-      [`button--${icon}`]: !!icon,
-    };
-    return Object.keys(classes)
-      .filter((className) => classes[className])
-      .join(" ");
+    const classNames = ["button"];
+    if (icon) {
+      classNames.push(`button--${icon}`);
+    }
+    return classNames.join(" ");
   };
 </script>
 
