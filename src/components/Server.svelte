@@ -35,8 +35,8 @@
       NO DATA
     {:else}
       {#if data.buttons?.length}
-        {#each data.buttons as button}
-          <ExternalLink href={button.url} icon={button.icon}>{button.text}</ExternalLink>
+        {#each data.buttons as { url, icon, text }}
+          <ExternalLink href={url} {icon}>{text}</ExternalLink>
         {/each}
       {/if}
       {#if data.map || data.mode}

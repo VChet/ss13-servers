@@ -20,40 +20,40 @@
   </header>
   <section class="community">
     <h2>SS220</h2>
-    {#each ss220Links as link}
-      <ExternalLink href={link.url} icon={link.icon}>{link.text}</ExternalLink>
+    {#each ss220Links as { url, icon, text }}
+      <ExternalLink href={url} {icon}>{text}</ExternalLink>
     {/each}
     <ul class="community__servers">
-      {#each ss220Servers as server}
-        <Server data={server} />
+      {#each ss220Servers as data}
+        <Server {data} />
       {/each}
     </ul>
   </section>
   <section class="community">
     <h2>Tau Ceti</h2>
-    {#each tauLinks as link}
-      <ExternalLink href={link.url} icon={link.icon}>{link.text}</ExternalLink>
+    {#each tauLinks as { url, icon, text }}
+      <ExternalLink href={url} {icon}>{text}</ExternalLink>
     {/each}
     <ul class="community__servers">
-      {#each tauServers as server}
-        <Server data={server} />
+      {#each tauServers as data}
+        <Server {data} />
       {/each}
     </ul>
   </section>
   <section class="community">
     <h2>Chaotic Onyx</h2>
-    {#each onyxLinks as link}
-      <ExternalLink href={link.url} icon={link.icon}>{link.text}</ExternalLink>
+    {#each onyxLinks as { url, icon, text }}
+      <ExternalLink href={url} {icon}>{text}</ExternalLink>
     {/each}
     <ul class="community__servers">
-      {#each onyxServers as server}
-        <Server data={server} />
+      {#each onyxServers as data}
+        <Server {data} />
       {/each}
     </ul>
   </section>
   <section class="info">
-    {#each infoLinks as link}
-      <ExternalLink href={link.url} icon={link.icon}>{link.text}</ExternalLink>
+    {#each infoLinks as { url, icon, text }}
+      <ExternalLink href={url} {icon}>{text}</ExternalLink>
     {/each}
   </section>
 </main>
