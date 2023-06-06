@@ -2,6 +2,7 @@
   import ExternalLink from "@/components/ExternalLink.svelte";
   import Server from "@/components/Server.svelte";
   import { onyxLinks, onyxServers } from "@/servers/onyx";
+  import { ss220Links, ss220Servers } from "@/servers/ss220";
   import { tauLinks, tauServers } from "@/servers/tauCeti";
   import type { Link } from "@/types/Link";
 
@@ -17,6 +18,17 @@
     <h1>Space Station 13 RU Servers</h1>
     <ExternalLink href="https://www.byond.com/download/">Загрузить BYOND</ExternalLink>
   </header>
+  <section class="community">
+    <h2>SS220</h2>
+    {#each ss220Links as { url, icon, text }}
+      <ExternalLink href={url} {icon}>{text}</ExternalLink>
+    {/each}
+    <ul class="community__servers">
+      {#each ss220Servers as data}
+        <Server {data} />
+      {/each}
+    </ul>
+  </section>
   <section class="community">
     <h2>Tau Ceti</h2>
     {#each tauLinks as { url, icon, text }}
