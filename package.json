@@ -12,20 +12,30 @@
     "build": "vite build",
     "dev": "vite",
     "start": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "lint:css": "stylelint **/*{.scss,.svelte}",
+    "lint:css:fix": "npm run lint:css -- --fix"
   },
   "dependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.4.6",
     "@tabler/icons-svelte": "^2.39.0",
-    "@tsconfig/svelte": "^5.0.2",
-    "svelte": "^4.2.2",
-    "svelte-preprocess": "^5.0.4",
-    "typescript": "^5.2.2",
     "vite": "^4.5.0"
   },
   "devDependencies": {
+    "@tsconfig/svelte": "^5.0.2",
+    "postcss-html": "^1.5.0",
+    "postcss-scss": "^4.0.9",
     "sass": "^1.69.4",
+    "stylelint": "^15.11.0",
+    "stylelint-config-recess-order": "^4.3.0",
+    "stylelint-config-standard-scss": "^11.0.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.7.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-stylistic": "^0.4.3",
+    "svelte": "^4.2.2",
     "svelte-check": "^3.5.2",
-    "tslib": "^2.6.2"
+    "svelte-preprocess": "^5.0.4",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
   }
 }

@@ -77,25 +77,28 @@
 
 <style lang="scss">
   @mixin card {
+    padding: 20px;
     margin: 15px 0;
     background-color: #16161ce6;
     border: 1px solid #31313b;
     border-radius: 4px;
-    padding: 20px;
   }
   .header {
     display: grid;
     grid-template-columns: 1fr auto auto;
     gap: 10px;
     align-items: center;
-    @media (max-width: 425px) {
+
+    @media (width <= 425px) {
       grid-template-columns: 1fr;
     }
   }
   .community {
     @include card;
+
     text-align: center;
-    @media (max-width: 425px) {
+
+    @media (width <= 425px) {
       padding: 10px;
     }
     h2 {
@@ -105,18 +108,19 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
     }
     &__servers {
-      margin: 20px 0;
       display: grid;
-      gap: 30px;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      margin: 20px 0;
     }
   }
   .info {
     @include card;
+
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -124,8 +128,8 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
     }
   }
 </style>

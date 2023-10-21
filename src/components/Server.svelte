@@ -70,16 +70,16 @@
 <style lang="scss">
   .server {
     position: relative;
-    padding: 16px 20px;
-    background-color: #1d1d24e1;
-    border-radius: 4px;
-    border: 1px solid #31313b;
     display: flex;
+    flex-direction: column;
     gap: 5px;
     align-items: center;
-    flex-direction: column;
     justify-content: space-between;
+    padding: 16px 20px;
     text-align: center;
+    background-color: #1d1d24e1;
+    border: 1px solid #31313b;
+    border-radius: 4px;
     &__name {
       margin: 0;
     }
@@ -89,20 +89,20 @@
       right: 0;
     }
     &__data {
-      color: #cacaca;
       font-size: 16px;
       line-height: 26px;
+      color: #cacaca;
     }
     &__description {
-      color: #cacaca;
       font-size: 16px;
+      color: #cacaca;
     }
     &__play {
-      margin-top: 15px;
       display: block;
       width: 100%;
       max-width: 150px;
-      border: 1px solid rgb(70, 110, 110);
+      margin-top: 15px;
+      border: 1px solid #466e6e;
     }
   }
 </style>
