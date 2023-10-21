@@ -1,28 +1,26 @@
 import type { Link } from "@/components/Link";
 
 export interface TauServer {
-  version: string;
-  mode: string;
-  respawn: number;
-  enter: number;
-  ai: number;
-  host?: any;
-  players: number;
-  stationtime: string;
-  gamestate: number;
-  roundduration: string;
-  map_name: string;
-  popcap: number;
-  round_id: number;
-  revision: string;
   admins: number;
+  ai: number;
   cached: number;
+  enter: number;
   error?: number;
+  gamestate: number;
+  host: null;
+  map_name: string;
+  mode: string;
+  players: number;
+  popcap: number;
+  respawn: number;
+  revision: string;
+  round_id: number;
+  roundduration: string;
+  stationtime: string;
+  version: string;
 }
 
 export interface ServerModel {
-  /** Byond World Id */
-  byond_id?: number;
   /** Server name */
   name: string;
   /** Byond server URL */
@@ -30,7 +28,7 @@ export interface ServerModel {
   /** Server description */
   description?: string;
   /** Additional server related buttons */
-  buttons?: Array<Link>;
+  buttons?: Link[];
   /** Build */
   build?: string;
   /** Current map */

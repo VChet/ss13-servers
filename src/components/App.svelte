@@ -6,7 +6,7 @@
   import { tauLinks, tauServers } from "@/servers/tauCeti";
   import type { Link } from "@/types/Link";
 
-  const infoLinks: Array<Link> = [
+  const infoLinks: Link[] = [
     { text: "📝 Paperwork Simulator", url: "http://ps.ss13.net" },
     { text: "🗺️ WebMap", url: "https://affectedarc07.github.io/SS13WebMap" },
   ];

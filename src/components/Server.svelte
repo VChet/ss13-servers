@@ -9,9 +9,8 @@
   $: isTauServer = data.url.includes("tauceti");
 
   async function fetchTauData() {
-    if (!data.byond_id) return;
-    const response = await fetchTauServer(data.byond_id);
-    if (response) data = { ...data, ...response };
+    const response = await fetchTauServer(data.name);
+    if (response) Object.assign(data, response);
   }
 
   onMount(async () => {
