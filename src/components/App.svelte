@@ -15,8 +15,9 @@
 <div class="stars" />
 <main class="container">
   <header class="header">
-    <h1>Space Station 13 RU Servers</h1>
-    <ExternalLink href="https://www.byond.com/download/">Загрузить BYOND</ExternalLink>
+    <h1>Space Station RU Servers</h1>
+    <ExternalLink href="https://www.byond.com/download/">BYOND</ExternalLink>
+    <ExternalLink href="https://store.steampowered.com/app/1255460/Space_Station_14/">SS14</ExternalLink>
   </header>
   <section class="community">
     <h2>SS220</h2>
@@ -67,10 +68,13 @@
     padding: 20px;
   }
   .header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 10px;
     align-items: center;
+    @media (max-width: 425px) {
+      grid-template-columns: 1fr;
+    }
   }
   .community {
     @include card;
