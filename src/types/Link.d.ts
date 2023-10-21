@@ -1,4 +1,4 @@
-type Icons = "wiki" | "discord" | "rules" | "map" | "music";
+type Icons = "wiki" | "discord" | "rules" | "map" | "document" | "music";
 
 export type Link = {
   text: string;

@@ -55,11 +55,11 @@ ul {
 }
 .button {
   display: inline-flex;
+  gap: 8px;
   align-items: center;
   text-decoration: inherit;
   background-color: #23232d;
   padding: 10px;
-  margin: 5px;
   border: none;
   border-radius: 4px;
   color: #cacaca;
@@ -72,8 +72,5 @@ ul {
   }
   &:active {
     transform: translateY(1px);
-  }
-  svg {
-    margin-right: 8px;
   }
 }

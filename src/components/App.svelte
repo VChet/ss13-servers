@@ -7,8 +7,8 @@
   import type { Link } from "@/types/Link";
 
   const infoLinks: Link[] = [
-    { text: "📝 Paperwork Simulator", url: "http://ps.ss13.net" },
-    { text: "🗺️ WebMap", url: "https://affectedarc07.github.io/SS13WebMap" },
+    { text: "Paperwork Simulator", icon: "document", url: "http://ps.ss13.net" },
+    { text: "WebMap", icon: "map", url: "https://affectedarc07.github.io/SS13WebMap" },
   ];
 </script>
 
@@ -21,9 +21,13 @@
   </header>
   <section class="community">
     <h2>SS220</h2>
-    {#each ss220Links as { url, icon, text }}
-      <ExternalLink href={url} {icon}>{text}</ExternalLink>
-    {/each}
+    <ul class="community__buttons">
+      {#each ss220Links as { url, icon, text }}
+        <li>
+          <ExternalLink href={url} {icon}>{text}</ExternalLink>
+        </li>
+      {/each}
+    </ul>
     <ul class="community__servers">
       {#each ss220Servers as data}
         <Server {data} />
@@ -32,9 +36,13 @@
   </section>
   <section class="community">
     <h2>Tau Ceti</h2>
-    {#each tauLinks as { url, icon, text }}
-      <ExternalLink href={url} {icon}>{text}</ExternalLink>
-    {/each}
+    <ul class="community__buttons">
+      {#each tauLinks as { url, icon, text }}
+        <li>
+          <ExternalLink href={url} {icon}>{text}</ExternalLink>
+        </li>
+      {/each}
+    </ul>
     <ul class="community__servers">
       {#each tauServers as data}
         <Server {data} />
@@ -43,9 +51,13 @@
   </section>
   <section class="community">
     <h2>Chaotic Onyx</h2>
-    {#each onyxLinks as { url, icon, text }}
-      <ExternalLink href={url} {icon}>{text}</ExternalLink>
-    {/each}
+    <ul class="community__buttons">
+      {#each onyxLinks as { url, icon, text }}
+        <li>
+          <ExternalLink href={url} {icon}>{text}</ExternalLink>
+        </li>
+      {/each}
+    </ul>
     <ul class="community__servers">
       {#each onyxServers as data}
         <Server {data} />
@@ -53,9 +65,13 @@
     </ul>
   </section>
   <section class="info">
-    {#each infoLinks as { url, icon, text }}
-      <ExternalLink href={url} {icon}>{text}</ExternalLink>
-    {/each}
+    <ul class="info__buttons">
+      {#each infoLinks as { url, icon, text }}
+        <li>
+          <ExternalLink href={url} {icon}>{text}</ExternalLink>
+        </li>
+      {/each}
+    </ul>
   </section>
 </main>
 
@@ -85,6 +101,13 @@
     h2 {
       margin-top: 0;
     }
+    &__buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      align-items: center;
+    }
     &__servers {
       margin: 20px 0;
       display: grid;
@@ -97,5 +120,12 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    &__buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      align-items: center;
+    }
   }
 </style>

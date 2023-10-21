@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import { IconRefresh } from "@tabler/icons-svelte";
   import ExternalLink from "@/components/ExternalLink.svelte";
   import { fetchTauServer } from "@/servers/tauCeti";
   import { getBuildEmoji, pluralize } from "@/utils";
@@ -21,7 +22,9 @@
 <li class="server">
   <h3 class="server__name">{data.name}</h3>
   {#if isTauServer}
-    <button class="button server__update" on:click={fetchTauData}>🔄</button>
+    <button class="button server__update" on:click={fetchTauData}>
+      <IconRefresh/>
+    </button>
   {/if}
   {#if data.build}
     <div class="server__build" title="Билд">

@@ -1,39 +1,23 @@
 <script lang="ts">
+  import {
+    IconBook2,
+    IconBrandDiscordFilled,
+    IconBrandWikipedia,
+    IconMap,
+    IconMusic,
+    IconNotes,
+  } from "@tabler/icons-svelte";
   export let href: string;
   export let icon: string | undefined = undefined;
-
-  $: classList = () => {
-    const classNames = ["button"];
-    if (icon) {
-      classNames.push(`button--${icon}`);
-    }
-    return classNames.join(" ");
-  };
 </script>
 
-<a class={classList()} {href} target="_blank" rel="noopener noreferrer">
-  {#if icon === "rules"}📃
-  {:else if icon === "map"}🗺️
-  {:else if icon === "music"}🎵
+<a class="button" {href} target="_blank" rel="noopener noreferrer">
+  {#if icon === "rules"}<IconBook2 />
+  {:else if icon === "map"}<IconMap />
+  {:else if icon === "document"}<IconNotes />
+  {:else if icon === "music"}<IconMusic />
+  {:else if icon === "wiki"}<IconBrandWikipedia />
+  {:else if icon === "discord"}<IconBrandDiscordFilled />
   {/if}
   <slot />
 </a>
-
-<style lang="scss">
-  .button {
-    @mixin icon {
-      padding-left: 32px;
-      background-position: 8px center;
-      background-repeat: no-repeat;
-      background-size: 16px;
-    }
-    &--wiki {
-      @include icon;
-      background-image: url("/assets/wikipedia.svg");
-    }
-    &--discord {
-      @include icon;
-      background-image: url("/assets/discord.svg");
-    }
-  }
-</style>
