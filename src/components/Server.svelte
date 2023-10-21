@@ -11,7 +11,7 @@
 
   async function fetchTauData() {
     const response = await fetchTauServer(data.name);
-    if (response) Object.assign(data, response);
+    if (response) data = { ...data, ...response };
   }
 
   onMount(async () => {
