@@ -64,7 +64,7 @@
       {data.description}
     </div>
   {/if}
-  <a class="button server__play" title="Запустить Byond и подключиться" href={data.url} rel="noopener">Играть</a>
+  <a class="button server__play" title={data.url} href={data.url} rel="noopener">Играть</a>
 </li>
 
 <style lang="scss">
