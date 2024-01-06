@@ -1,8 +1,8 @@
 {
   "recommendations": [
-    "svelte.svelte-vscode",
     "ardenivanov.svelte-intellisense",
-    "esbenp.prettier-vscode",
-    "christian-kohler.npm-intellisense"
+    "christian-kohler.npm-intellisense",
+    "dbaeumer.vscode-eslint",
+    "svelte.svelte-vscode"
   ]
 }

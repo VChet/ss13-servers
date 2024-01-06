@@ -23,7 +23,7 @@
   <h3 class="server__name">{data.name}</h3>
   {#if isTauServer}
     <button class="button server__update" on:click={fetchTauData}>
-      <IconRefresh/>
+      <IconRefresh />
     </button>
   {/if}
   {#if data.build}

@@ -1,7 +1,7 @@
-type Icons = "wiki" | "discord" | "rules" | "map" | "document" | "music";
+type LinkIcon = "wiki" | "discord" | "rules" | "map" | "document" | "music";
 
-export type Link = {
-  text: string;
-  icon?: Icons;
-  url: string;
-};
+export interface Link {
+  text: string
+  icon?: LinkIcon
+  url: string
+}

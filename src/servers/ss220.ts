@@ -9,19 +9,19 @@ export const ss220Links: Link[] = [
 
 export const ss220Servers: ServerModel[] = [
   {
-    name: 'Main 13',
-    url: 'byond://141.95.72.94:4002',
+    name: "Main 13",
+    url: "byond://141.95.72.94:4002"
   },
   {
-    name: 'Main 14',
-    url: 'byond://141.95.72.94:1212',
+    name: "Main 14",
+    url: "byond://141.95.72.94:1212"
   },
   {
-    name: 'Second 14',
-    url: 'byond://141.95.72.94:1213',
+    name: "Second 14",
+    url: "byond://141.95.72.94:1213"
   },
   {
-    name: 'Third 14',
-    url: 'byond://141.95.72.94:1214',
-  },
+    name: "Third 14",
+    url: "byond://141.95.72.94:1214"
+  }
 ];

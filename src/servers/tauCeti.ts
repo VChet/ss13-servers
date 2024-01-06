@@ -8,20 +8,20 @@ export const tauLinks: Link[] = [
   { text: "Карта", icon: "map", url: "https://affectedarc07.github.io/SS13WebMap/TauCetiClassic/BoxStation" },
   { text: "Гайды", url: "https://wiki.taucetistation.org/Guides" },
   { text: "Музыка", icon: "music", url: "https://wiki.taucetistation.org/Music" },
-  { text: "Сайт", url: "https://taucetistation.org" },
+  { text: "Сайт", url: "https://taucetistation.org" }
 ];
 
 export const tauServers: ServerModel[] = [
   {
     name: "Tau Ceti Classic",
     description: "Основной сервер с наибольшим лимитом игроков и активным вниманием администрации",
-    url: "byond://game.taucetistation.org:2506",
+    url: "byond://game.taucetistation.org:2506"
   },
   {
     name: "Tau Ceti Classic II",
     description: "Дополнительный сервер с меньшим ограничением на онлайн, меньшим участием администрации",
-    url: "byond://game.taucetistation.org:2507",
-  },
+    url: "byond://game.taucetistation.org:2507"
+  }
 ];
 
 function getEndpoint(name: ServerModel["name"]): string {
@@ -45,7 +45,7 @@ export async function fetchTauServer(name: ServerModel["name"]): Promise<Partial
       map: data.map_name,
       mode: data.mode,
       players: data.players,
-      duration: data.roundduration,
+      duration: data.roundduration
     };
   } catch (error) {
     console.error(error);

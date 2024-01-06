@@ -8,7 +8,7 @@
 
   const infoLinks: Link[] = [
     { text: "Paperwork Simulator", icon: "document", url: "http://ps.ss13.net" },
-    { text: "WebMap", icon: "map", url: "https://affectedarc07.github.io/SS13WebMap" },
+    { text: "WebMap", icon: "map", url: "https://affectedarc07.github.io/SS13WebMap" }
   ];
 </script>
 

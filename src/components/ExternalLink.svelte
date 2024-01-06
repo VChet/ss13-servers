@@ -5,10 +5,11 @@
     IconBrandWikipedia,
     IconMap,
     IconMusic,
-    IconNotes,
+    IconNotes
   } from "@tabler/icons-svelte";
+
   export let href: string;
-  export let icon: string | undefined = undefined;
+  export let icon: string | null = null;
 </script>
 
 <a class="button" {href} target="_blank" rel="noopener noreferrer">
