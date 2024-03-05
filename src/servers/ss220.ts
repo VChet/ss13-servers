@@ -12,7 +12,7 @@ export const ss220Links: Link[] = [
 export const ss220Servers: ServerModel[] = [
   {
     name: "[13] Green",
-    url: "byond://s2.ss220.club:4002"
+    url: "byond://s1.ss220.club:4002"
   },
   {
     name: "[13] Black",
@@ -22,15 +22,23 @@ export const ss220Servers: ServerModel[] = [
     name: "[13] Prime",
     url: "byond://s1.ss220.club:4001",
     buttons: [
-      { text: "Вики", icon: "wiki", url: "https://wiki.ss220.club/index.php/Раздел_Prime_сервера" }
+      { text: "Вики Prime", icon: "wiki", url: "https://wiki.ss220.club/index.php/Раздел_Prime_сервера" }
     ]
   },
   {
-    name: "[14] Persey",
-    url: "s2.ss220.club:1212"
+    name: "[13] Sierra",
+    url: "byond://s3.ss220.club:1212"
   },
   {
     name: "[14] Orion",
+    url: "s2.ss220.club:1212"
+  },
+  {
+    name: "[14] Persey",
     url: "s2.ss220.club:1213"
+  },
+  {
+    name: "[14] Sagittarius",
+    url: "s3.ss220.club:1214"
   }
 ];
