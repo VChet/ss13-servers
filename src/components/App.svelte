@@ -15,7 +15,7 @@
 <div class="stars" />
 <main class="container">
   <header class="header">
-    <h1>Space Station RU Servers</h1>
+    <h1>Space Station 13 RU Servers</h1>
     <ExternalLink href="https://www.byond.com/download/">BYOND</ExternalLink>
     <ExternalLink href="https://store.steampowered.com/app/1255460/Space_Station_14/">SS14</ExternalLink>
   </header>
@@ -113,7 +113,7 @@
     }
     &__servers {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 30px;
       margin: 20px 0;
     }
