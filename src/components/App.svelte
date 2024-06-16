@@ -20,7 +20,8 @@
     <ExternalLink href="https://store.steampowered.com/app/1255460/Space_Station_14/">SS14</ExternalLink>
   </header>
   <section class="community">
-    <h2>SS220</h2>
+    <h2>SS220 | WyccStation</h2>
+    <p>Banda & Streamers project, 756 voices</p>
     <ul class="community__buttons">
       {#each ss220Links as { url, icon, text }}
         <li>
