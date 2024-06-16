@@ -2,26 +2,30 @@
   import { onMount } from "svelte";
   import { IconRefresh } from "@tabler/icons-svelte";
   import ExternalLink from "@/components/ExternalLink.svelte";
-  import { fetchServer } from "@/servers/tauCeti";
+  import { fetchServer as fetchTauServer } from "@/servers/tauCeti";
   import { getBuildEmoji, pluralize } from "@/utils";
   import type { ServerModel } from "@/types/server";
 
   export let data: ServerModel;
-  $: isTauServer = data.url.includes("tauceti");
+  function getFetchFn(url: ServerModel["url"]) {
+    if (url.includes("tauceti")) return fetchTauData;
+    return null;
+  }
+  $: fetchFn = getFetchFn(data.url);
 
   async function fetchTauData() {
-    const response = await fetchServer(data.name);
+    const response = await fetchTauServer(data.name);
     if (response) data = { ...data, ...response };
   }
 
-  onMount(async () => {
-    if (isTauServer) await fetchTauData();
+  onMount(() => {
+    if (fetchFn) fetchFn();
   });
 </script>
 
 <li class="server">
   <h3 class="server__name">{data.name}</h3>
-  {#if isTauServer}
+  {#if fetchFn}
     <button class="button server__update" on:click={fetchTauData}>
       <IconRefresh />
     </button>
