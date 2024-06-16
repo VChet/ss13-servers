@@ -6,7 +6,7 @@ export const tauLinks: Link[] = [
   { text: "Discord", icon: "discord", url: "https://discord.gg/YCWRjkb" },
   { text: "Вики", icon: "wiki", url: "https://wiki.taucetistation.org" },
   { text: "Правила", icon: "rules", url: "https://rules.taucetistation.org" },
-  { text: "Карта", icon: "map", url: "https://affectedarc07.github.io/SS13WebMap/TauCetiClassic/BoxStation" },
+  { text: "Карта", icon: "map", url: "https://webmap.affectedarc07.co.uk/maps/tcc/box" },
   { text: "Гайды", url: "https://wiki.taucetistation.org/Guides" },
   { text: "Музыка", icon: "music", url: "https://wiki.taucetistation.org/Music" },
   { text: "Сайт", url: "https://taucetistation.org" }
