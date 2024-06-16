@@ -2,12 +2,12 @@
   import ExternalLink from "@/components/ExternalLink.svelte";
   import Server from "@/components/Server.svelte";
   import type { Link } from "@/types/link";
-  import type { ServerModel } from "@/types/server";
+  import type { ServerInfo } from "@/types/server";
 
   export let name: string;
   export let description: string | null = null;
   export let links: Link[] = [];
-  export let servers: ServerModel[] = [];
+  export let servers: ServerInfo[] = [];
 </script>
 
 <section class="card community">

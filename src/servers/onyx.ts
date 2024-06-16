@@ -1,5 +1,5 @@
 import type { Link } from "@/types/link";
-import type { ServerModel } from "@/types/server";
+import type { ServerInfo } from "@/types/server";
 
 export const onyxLinks: Link[] = [
   { text: "Discord", icon: "discord", url: "https://discord.gg/5BRMMFg" },
@@ -8,7 +8,7 @@ export const onyxLinks: Link[] = [
   { text: "Сайт", url: "https://ss13.ru" }
 ];
 
-export const onyxServers: ServerModel[] = [
+export const onyxServers: ServerInfo[] = [
   {
     name: "Onyx",
     description: "Классический дух оторванной от остального человечества станции, на которой вечно что-то идет не так и никто не знает, что с этим делать ",

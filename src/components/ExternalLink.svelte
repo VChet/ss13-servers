@@ -7,9 +7,10 @@
     IconMusic,
     IconNotes
   } from "@tabler/icons-svelte";
+  import type { LinkIcon } from "@/types/link";
 
   export let href: string;
-  export let icon: string | null = null;
+  export let icon: LinkIcon | null = null;
 </script>
 
 <a class="button" {href} target="_blank" rel="noopener noreferrer">

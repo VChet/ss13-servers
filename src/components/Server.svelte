@@ -4,10 +4,10 @@
   import ExternalLink from "@/components/ExternalLink.svelte";
   import { fetchServer as fetchTauServer } from "@/servers/tauCeti";
   import { getBuildEmoji, pluralize } from "@/utils";
-  import type { ServerModel } from "@/types/server";
+  import type { ServerInfo } from "@/types/server";
 
-  export let data: ServerModel;
-  function getFetchFn(url: ServerModel["url"]) {
+  export let data: ServerInfo;
+  function getFetchFn(url: ServerInfo["url"]) {
     if (url.includes("tauceti")) return fetchTauData;
     return null;
   }
@@ -47,7 +47,15 @@
       {/if}
       {#if data.map || data.mode}
         <div class="server__data-mode" title="Карта">
-          {#if data.map}{data.map}{/if}
+          {#if data.map}
+            {#if data.mapUrl}
+              <a href={data.mapUrl} target="_blank" rel="noopener noreferrer">
+                {data.map}
+              </a>
+            {:else}
+              {data.map}
+            {/if}
+          {/if}
           {#if data.mode}({data.mode}){/if}
         </div>
       {/if}

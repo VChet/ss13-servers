@@ -1,5 +1,5 @@
 import type { Link } from "@/types/link";
-import type { ServerModel } from "@/types/server";
+import type { ServerInfo } from "@/types/server";
 
 export const ss220Links: Link[] = [
   { text: "Discord", icon: "discord", url: "https://discord.gg/ss220" },
@@ -9,28 +9,31 @@ export const ss220Links: Link[] = [
   { text: "Вики Sierra", icon: "wiki", url: "https://sierra.ss220.club" }
 ];
 
-export const ss220Servers: ServerModel[] = [
+export const ss220Servers: ServerInfo[] = [
   {
     name: "Green",
     build: "SS220-Paradise",
     map: "Delta Station (Kerberos)",
+    mapUrl: "https://webmap.affectedarc07.co.uk/maps/ss220/deltastation",
     url: "byond://s1.ss220.club:4002"
   },
   {
     name: "Black",
     build: "SS220-Paradise",
     map: "Box Station (Cyberiad)",
+    mapUrl: "https://webmap.affectedarc07.co.uk/maps/ss220/boxstation",
     url: "byond://s1.ss220.club:4000"
   },
   {
     name: "Prime",
-    url: "byond://s1.ss220.club:4001",
     build: "SS220-Paradise",
-    map: "Box Station (Cyberiad)"
+    map: "Box Station (Cyberiad)",
+    mapUrl: "https://webmap.affectedarc07.co.uk/maps/ss220/boxstation",
+    url: "byond://s1.ss220.club:4001"
   },
   {
     name: "Sierra",
-    url: "byond://s3.ss220.club:1212",
-    build: "WycceraBay220"
+    build: "WycceraBay220",
+    url: "byond://s3.ss220.club:1212"
   }
 ];

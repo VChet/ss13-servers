@@ -1,4 +1,4 @@
-type LinkIcon = "wiki" | "discord" | "rules" | "map" | "document" | "music";
+export type LinkIcon = "wiki" | "discord" | "rules" | "map" | "document" | "music";
 
 export interface Link {
   text: string

@@ -1,6 +1,6 @@
 import type { Link } from "@/types/link";
 
-export interface ServerModel {
+export interface ServerInfo {
   /** Server name */
   name: string
   /** Byond server URL */
@@ -13,6 +13,8 @@ export interface ServerModel {
   build?: string
   /** Current map */
   map?: string
+  /** Current map url */
+  mapUrl?: string
   /** Game mode */
   mode?: string
   /** Player count */
