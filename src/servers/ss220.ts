@@ -1,5 +1,5 @@
-import type { Link } from "@/types/Link";
-import type { ServerModel } from "@/types/Server";
+import type { Link } from "@/types/link";
+import type { ServerModel } from "@/types/server";
 
 export const ss220Links: Link[] = [
   { text: "Discord", icon: "discord", url: "https://discord.gg/ss220" },

@@ -4,7 +4,7 @@
   import { onyxLinks, onyxServers } from "@/servers/onyx";
   import { ss220Links, ss220Servers } from "@/servers/ss220";
   import { tauLinks, tauServers } from "@/servers/tauCeti";
-  import type { Link } from "@/types/Link";
+  import type { Link } from "@/types/link";
 
   const infoLinks: Link[] = [
     { text: "Paperwork Simulator", icon: "document", url: "http://ps.ss13.net" },

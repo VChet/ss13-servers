@@ -1,5 +1,6 @@
-import type { Link } from "@/types/Link";
-import type { ServerModel, TauServer } from "@/types/Server";
+import type { TauServer } from "@/types/api/tau-ceti";
+import type { Link } from "@/types/link";
+import type { ServerModel } from "@/types/server";
 
 export const tauLinks: Link[] = [
   { text: "Discord", icon: "discord", url: "https://discord.gg/YCWRjkb" },
@@ -32,7 +33,7 @@ function getEndpoint(name: ServerModel["name"]): string {
   }
 }
 
-export async function fetchTauServer(name: ServerModel["name"]): Promise<Partial<ServerModel> | void> {
+export async function fetchServer(name: ServerModel["name"]): Promise<Partial<ServerModel> | void> {
   try {
     const response = await fetch(getEndpoint(name));
     const data: TauServer = await response.json();

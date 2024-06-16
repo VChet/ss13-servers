@@ -2,15 +2,15 @@
   import { onMount } from "svelte";
   import { IconRefresh } from "@tabler/icons-svelte";
   import ExternalLink from "@/components/ExternalLink.svelte";
-  import { fetchTauServer } from "@/servers/tauCeti";
+  import { fetchServer } from "@/servers/tauCeti";
   import { getBuildEmoji, pluralize } from "@/utils";
-  import type { ServerModel } from "@/types/Server";
+  import type { ServerModel } from "@/types/server";
 
   export let data: ServerModel;
   $: isTauServer = data.url.includes("tauceti");
 
   async function fetchTauData() {
-    const response = await fetchTauServer(data.name);
+    const response = await fetchServer(data.name);
     if (response) data = { ...data, ...response };
   }
 
