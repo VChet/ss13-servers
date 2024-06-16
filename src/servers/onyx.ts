@@ -10,10 +10,9 @@ export const onyxLinks: Link[] = [
 
 export const onyxServers: ServerModel[] = [
   {
-    name: "Chaotic Onyx",
-    description:
-      "Классический дух оторванной от остального человечества станции, на которой вечно что-то идет не так и никто не знает, что с этим делать ",
-    url: "byond://play.ss13.ru:2506",
+    name: "Onyx",
+    description: "Классический дух оторванной от остального человечества станции, на которой вечно что-то идет не так и никто не знает, что с этим делать ",
+    url: "byond://play.ss13.ru:2507",
     build: "OnyxBay"
   }
 ];

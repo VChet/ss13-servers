@@ -26,12 +26,9 @@ export const tauServers: ServerModel[] = [
 
 function getEndpoint(name: ServerModel["name"]): string {
   switch (name) {
-    case "Tau Ceti Classic":
-      return "https://taucetistation.org/server/tauceti/json";
-    case "Tau Ceti Classic II":
-      return "https://taucetistation.org/server/tauceti2/json";
-    default:
-      return "";
+    case "Tau Ceti Classic": return "https://taucetistation.org/server/tauceti/json";
+    case "Tau Ceti Classic II": return "https://taucetistation.org/server/tauceti2/json";
+    default: throw new Error(`Unknown server name: ${name}`);
   }
 }
 
