@@ -21,6 +21,7 @@ export default {
   rules: {
     "@stylistic/color-hex-case": "lower",
     "rule-empty-line-before": "never",
-    "selector-class-pattern": "[a-z]([a-z-]+)?(__([a-z]+-?)+)?(--([a-z]+-?)+){0,2}"
+    "selector-class-pattern": "[a-z]([a-z-]+)?(__([a-z]+-?)+)?(--([a-z]+-?)+){0,2}",
+    "selector-pseudo-class-no-unknown": [true, { ignorePseudoClasses: ["global"] }]
   }
 };

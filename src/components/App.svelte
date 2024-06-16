@@ -1,6 +1,6 @@
 <script lang="ts">
-  import ExternalLink from "@/components/ExternalLink.svelte";
-  import Server from "@/components/Server.svelte";
+  import Community from "./Community.svelte";
+  import ExternalLink from "./ExternalLink.svelte";
   import { onyxLinks, onyxServers } from "@/servers/onyx";
   import { ss220Links, ss220Servers } from "@/servers/ss220";
   import { tauLinks, tauServers } from "@/servers/tauCeti";
@@ -19,53 +19,23 @@
     <ExternalLink href="https://www.byond.com/download/">BYOND</ExternalLink>
     <ExternalLink href="https://store.steampowered.com/app/1255460/Space_Station_14/">SS14</ExternalLink>
   </header>
-  <section class="community">
-    <h2>SS220 | WyccStation</h2>
-    <p>Banda & Streamers project, 756 voices</p>
-    <ul class="community__buttons">
-      {#each ss220Links as { url, icon, text }}
-        <li>
-          <ExternalLink href={url} {icon}>{text}</ExternalLink>
-        </li>
-      {/each}
-    </ul>
-    <ul class="community__servers">
-      {#each ss220Servers as data}
-        <Server {data} />
-      {/each}
-    </ul>
-  </section>
-  <section class="community">
-    <h2>Tau Ceti</h2>
-    <ul class="community__buttons">
-      {#each tauLinks as { url, icon, text }}
-        <li>
-          <ExternalLink href={url} {icon}>{text}</ExternalLink>
-        </li>
-      {/each}
-    </ul>
-    <ul class="community__servers">
-      {#each tauServers as data}
-        <Server {data} />
-      {/each}
-    </ul>
-  </section>
-  <section class="community">
-    <h2>Chaotic Onyx</h2>
-    <ul class="community__buttons">
-      {#each onyxLinks as { url, icon, text }}
-        <li>
-          <ExternalLink href={url} {icon}>{text}</ExternalLink>
-        </li>
-      {/each}
-    </ul>
-    <ul class="community__servers">
-      {#each onyxServers as data}
-        <Server {data} />
-      {/each}
-    </ul>
-  </section>
-  <section class="info">
+  <Community
+    name="SS220 | WyccStation"
+    description="Banda & Streamers project, 756 voices"
+    links={ss220Links}
+    servers={ss220Servers}
+  />
+  <Community
+    name="Tau Ceti"
+    links={tauLinks}
+    servers={tauServers}
+  />
+  <Community
+    name="Chaotic Onyx"
+    links={onyxLinks}
+    servers={onyxServers}
+  />
+  <section class="card info">
     <ul class="info__buttons">
       {#each infoLinks as { url, icon, text }}
         <li>
@@ -77,7 +47,7 @@
 </main>
 
 <style lang="scss">
-  @mixin card {
+  :global(.card) {
     padding: 20px;
     margin: 15px 0;
     background-color: #16161ce6;
@@ -94,34 +64,7 @@
       grid-template-columns: 1fr;
     }
   }
-  .community {
-    @include card;
-
-    text-align: center;
-
-    @media (width <= 425px) {
-      padding: 10px;
-    }
-    h2 {
-      margin-top: 0;
-    }
-    &__buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: center;
-      justify-content: center;
-    }
-    &__servers {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      margin: 20px 0;
-    }
-  }
   .info {
-    @include card;
-
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
