@@ -13,7 +13,7 @@ export const ss220Servers: ServerInfo[] = [
   {
     name: "Green",
     build: "SS220-Paradise",
-    map: "Delta Station (Kerberos)",
+    map: "Box Station (Cyberiad)",
     mapUrl: "https://webmap.affectedarc07.co.uk/maps/ss220/deltastation",
     url: "byond://s1.ss220.club:4002"
   },
