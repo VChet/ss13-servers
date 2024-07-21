@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Community from "./Community.svelte";
-  import ExternalLink from "./ExternalLink.svelte";
+  import Community from "./components/Community.svelte";
+  import ExternalLink from "./components/ExternalLink.svelte";
   import { onyxLinks, onyxServers } from "@/servers/onyx";
   import { ss220Links, ss220Servers } from "@/servers/ss220";
   import { tauLinks, tauServers } from "@/servers/tauCeti";
