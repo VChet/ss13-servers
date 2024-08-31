@@ -34,6 +34,6 @@ export const ss220Servers: ServerInfo[] = [
   {
     name: "Sierra",
     build: "WycceraBay220",
-    url: "byond://s3.ss220.club:1212"
+    url: "byond://141.95.102.4:1212"
   }
 ];
