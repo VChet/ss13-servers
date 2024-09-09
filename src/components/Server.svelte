@@ -1,10 +1,10 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { IconRefresh } from "@tabler/icons-svelte";
-  import ExternalLink from "@/components/ExternalLink.svelte";
   import { fetchServer as fetchTauServer } from "@/servers/tauCeti";
   import { getBuildEmoji, pluralize } from "@/utils";
   import type { ServerInfo } from "@/types/server";
+  import ExternalLink from "@/components/ExternalLink.svelte";
 
   export let data: ServerInfo;
   function getFetchFn(url: ServerInfo["url"]) {

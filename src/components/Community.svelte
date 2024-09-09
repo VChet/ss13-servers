@@ -1,8 +1,8 @@
 <script lang="ts">
-  import ExternalLink from "@/components/ExternalLink.svelte";
-  import Server from "@/components/Server.svelte";
   import type { Link } from "@/types/link";
   import type { ServerInfo } from "@/types/server";
+  import ExternalLink from "@/components/ExternalLink.svelte";
+  import Server from "@/components/Server.svelte";
 
   export let name: string;
   export let description: string | null = null;
