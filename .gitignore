@@ -4,6 +4,6 @@
 .DS_Store
 
 .vscode/*
-!.vscode/tasks.json
-!.vscode/launch.json
 !.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
