@@ -40,15 +40,12 @@ a {
   padding-left: 16px;
   margin-right: auto;
   margin-left: auto;
-
   @media (width >= 768px) {
     width: 750px;
   }
-
   @media (width >= 992px) {
     width: 970px;
   }
-
   @media (width >= 1200px) {
     width: 1170px;
   }
@@ -62,7 +59,6 @@ a {
   background: transparent url("/assets/flickering.webp") repeat top center;
   animation: flickering 600s linear infinite;
 }
-
 @keyframes flickering {
   from {
     background-position: 0 0;

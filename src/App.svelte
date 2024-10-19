@@ -59,7 +59,6 @@
     grid-template-columns: 1fr auto auto;
     gap: 10px;
     align-items: center;
-
     @media (width <= 425px) {
       grid-template-columns: 1fr;
     }

@@ -32,7 +32,6 @@
 <style lang="scss">
   .community {
     text-align: center;
-
     @media (width <= 425px) {
       padding: 10px;
     }
