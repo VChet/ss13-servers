@@ -40,8 +40,8 @@ export default antfu({
         ["parent", "sibling", "index"],
         "internal-type",
         ["parent-type", "sibling-type", "index-type"],
-        "svelte-components",
         "side-effect",
+        "svelte-components",
         "object",
         "unknown"
       ],
@@ -74,13 +74,7 @@ export default antfu({
     "ts/consistent-indexed-object-style": "error",
     "ts/consistent-type-definitions": "off",
     "ts/no-shadow": "error",
-    "ts/no-unused-expressions": ["error", {
-      allowShortCircuit: true,
-      allowTaggedTemplates: true,
-      allowTernary: true
-    }],
     "unicorn/prefer-includes": "off",
-    "unused-imports/no-unused-vars": "off",
     "yaml/quotes": ["error", { prefer: "double" }]
   }
 });

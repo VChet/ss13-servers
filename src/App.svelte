@@ -12,7 +12,7 @@
   ];
 </script>
 
-<div class="stars" />
+<div class="stars"></div>
 <main class="container">
   <header class="header">
     <h1>Space Station 13 RU Servers</h1>
