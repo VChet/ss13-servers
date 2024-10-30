@@ -10,6 +10,9 @@
     { text: "Paperwork Simulator", icon: "document", url: "http://ps.ss13.net" },
     { text: "WebMap", icon: "map", url: "https://webmap.affectedarc07.co.uk" }
   ];
+
+  const updateTimestamp = import.meta.env.VITE_SERVERS_UPDATE;
+  const date = new Date(updateTimestamp).toLocaleDateString("ru-RU", { day: "numeric", month: "numeric", year: "numeric" });
 </script>
 
 <div class="stars"></div>
@@ -19,6 +22,7 @@
     <ExternalLink href="https://www.byond.com/download/">BYOND</ExternalLink>
     <ExternalLink href="https://store.steampowered.com/app/1255460/Space_Station_14/">SS14</ExternalLink>
   </header>
+  <div>Last update: {date}</div>
   <Community
     name="SS220 | WyccStation"
     description="Banda & Streamers project, 756 voices"
