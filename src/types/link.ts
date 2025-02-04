@@ -2,6 +2,6 @@ export type LinkIcon = "wiki" | "discord" | "rules" | "map" | "document" | "musi
 
 export interface Link {
   text: string
-  icon?: LinkIcon
   url: string
+  icon?: LinkIcon
 }

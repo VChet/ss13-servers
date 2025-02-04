@@ -22,27 +22,27 @@
   },
   "dependencies": {
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
-    "@tabler/icons-svelte": "^3.26.0",
-    "vite": "^6.0.5"
+    "@tabler/icons-svelte": "^3.29.0",
+    "vite": "^6.0.11"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.12.1",
+    "@antfu/eslint-config": "^4.1.1",
     "@stylistic/stylelint-plugin": "^3.1.1",
     "@tsconfig/svelte": "^5.0.4",
-    "@types/node": "^22.10.2",
-    "eslint": "^9.17.0",
+    "@types/node": "^22.13.1",
+    "eslint": "^9.19.0",
     "eslint-plugin-svelte": "^2.46.1",
-    "postcss-html": "^1.7.0",
+    "postcss-html": "^1.8.0",
     "postcss-scss": "^4.0.9",
-    "sass": "^1.83.0",
-    "stylelint": "^16.12.0",
-    "stylelint-config-recess-order": "^5.1.1",
+    "sass": "^1.83.4",
+    "stylelint": "^16.14.1",
+    "stylelint-config-recess-order": "^6.0.0",
     "stylelint-config-standard-scss": "^14.0.0",
     "stylelint-declaration-block-no-ignored-properties": "^2.8.0",
     "stylelint-order": "^6.0.4",
-    "svelte": "^5.15.0",
-    "svelte-check": "^4.1.1",
+    "svelte": "^5.19.7",
+    "svelte-check": "^4.1.4",
     "tslib": "^2.8.1",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.3"
   }
 }
