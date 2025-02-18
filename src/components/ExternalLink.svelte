@@ -1,4 +1,5 @@
 <script lang="ts">
+  import type { Snippet } from "svelte";
   import {
     IconBook2,
     IconBrandDiscordFilled,
@@ -9,8 +10,13 @@
   } from "@tabler/icons-svelte";
   import type { LinkIcon } from "@/types/link";
 
-  export let href: string;
-  export let icon: LinkIcon | null = null;
+  interface Props {
+    href: string
+    children: Snippet
+    icon?: LinkIcon | null
+  }
+
+  let { href, icon = null, children }: Props = $props();
 </script>
 
 <a class="button" {href} target="_blank" rel="noopener noreferrer">
@@ -21,5 +27,5 @@
   {:else if icon === "wiki"}<IconBrandWikipedia />
   {:else if icon === "discord"}<IconBrandDiscordFilled />
   {/if}
-  <slot />
+  {@render children()}
 </a>

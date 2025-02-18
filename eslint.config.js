@@ -9,6 +9,7 @@ const SORT_IMPORT_CUSTOM_GROUP = {
 export default antfu({
   toml: false,
   svelte: true,
+  isInEditor: false,
   rules: {
     "antfu/consistent-list-newline": "off",
     "antfu/if-newline": "off",
@@ -103,5 +104,11 @@ export default antfu({
     "ts/no-shadow": "error",
     "unicorn/prefer-includes": "off",
     "yaml/quotes": ["error", { prefer: "double" }]
+  }
+}, {
+  name: "svelte/ignores",
+  files: ["**/*.svelte"],
+  rules: {
+    "prefer-const": "off"
   }
 });

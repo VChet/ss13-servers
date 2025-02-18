@@ -6,12 +6,12 @@
   import type { ServerInfo } from "@/types/server";
   import ExternalLink from "@/components/ExternalLink.svelte";
 
-  export let data: ServerInfo;
-  function getFetchFn(url: ServerInfo["url"]) {
-    if (url.includes("tauceti")) return fetchTauData;
-    return null;
+  interface Props {
+    data: ServerInfo
   }
-  $: fetchFn = getFetchFn(data.url);
+  let { data = $bindable() }: Props = $props();
+
+  let fetchFn = $derived.by(() => data.url.includes("tauceti") ? fetchTauData : null);
 
   async function fetchTauData() {
     const response = await fetchTauServer(data.name);
@@ -26,7 +26,7 @@
 <li class="server">
   <h3 class="server__name">{data.name}</h3>
   {#if fetchFn}
-    <button class="button server__update" on:click={fetchTauData}>
+    <button class="button server__update" onclick={fetchTauData}>
       <IconRefresh />
     </button>
   {/if}

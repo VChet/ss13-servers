@@ -4,10 +4,19 @@
   import ExternalLink from "@/components/ExternalLink.svelte";
   import Server from "@/components/Server.svelte";
 
-  export let name: string;
-  export let description: string | null = null;
-  export let links: Link[] = [];
-  export let servers: ServerInfo[] = [];
+  interface Props {
+    name: string
+    description?: string | null
+    links?: Link[]
+    servers?: ServerInfo[]
+  }
+
+  let {
+    name,
+    description = null,
+    links = [],
+    servers = []
+  }: Props = $props();
 </script>
 
 <section class="card community">
