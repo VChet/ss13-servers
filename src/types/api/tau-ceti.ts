@@ -3,7 +3,6 @@ export interface TauServer {
   ai: number
   cached: number
   enter: number
-  error?: number
   gamestate: number
   host: null
   map_name: string
@@ -16,4 +15,5 @@ export interface TauServer {
   roundduration: string
   stationtime: string
   version: string
+  error?: number
 }

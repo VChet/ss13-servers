@@ -13,13 +13,6 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url))
     }
   },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        api: "modern"
-      }
-    }
-  },
   define: {
     "import.meta.env.VITE_SERVERS_UPDATE": JSON.stringify(serversUpdate)
   }

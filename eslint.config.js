@@ -1,6 +1,11 @@
 import process from "node:process";
 import antfu from "@antfu/eslint-config";
 
+const SORT_IMPORT_CUSTOM_GROUP = {
+  "svelte": "^svelte$",
+  "svelte-components": "\\.svelte$"
+};
+
 export default antfu({
   toml: false,
   svelte: true,
@@ -8,9 +13,8 @@ export default antfu({
     "antfu/consistent-list-newline": "off",
     "antfu/if-newline": "off",
     "curly": ["error", "multi-line"],
-    "import/no-useless-path-segments": ["error", {
-      noUselessIndex: true
-    }],
+    "import/consistent-type-specifier-style": "off",
+    "import/no-useless-path-segments": ["error", { noUselessIndex: true }],
     "max-lines": ["warn", { max: 1000 }],
     "max-params": ["error", { max: 6 }],
     "no-await-in-loop": "error",
@@ -29,8 +33,13 @@ export default antfu({
     "no-script-url": "error",
     "no-useless-concat": "error",
     "no-void": "error",
+    "perfectionist/sort-named-imports": ["error", {
+      order: "asc",
+      type: "natural",
+      groupKind: "values-first"
+    }],
     "perfectionist/sort-imports": ["error", {
-      internalPattern: ["@/**"],
+      internalPattern: ["^@/"],
       groups: [
         "builtin",
         "svelte",
@@ -46,14 +55,8 @@ export default antfu({
         "unknown"
       ],
       customGroups: {
-        value: {
-          "svelte": "svelte",
-          "svelte-components": ["**/*.svelte", "./**/*.svelte", "../**/*.svelte"]
-        },
-        type: {
-          "svelte": "svelte",
-          "svelte-components": ["**/*.svelte", "./**/*.svelte", "../**/*.svelte"]
-        }
+        value: SORT_IMPORT_CUSTOM_GROUP,
+        type: SORT_IMPORT_CUSTOM_GROUP
       },
       newlinesBetween: "ignore",
       order: "asc",
@@ -64,6 +67,29 @@ export default antfu({
     "style/arrow-parens": ["error", "always"],
     "style/brace-style": ["error", "1tbs", { allowSingleLine: true }],
     "style/comma-dangle": ["error", "never"],
+    "style/indent": ["error", 2, {
+      ArrayExpression: 1,
+      CallExpression: { arguments: 1 },
+      flatTernaryExpressions: false,
+      FunctionDeclaration: { body: 1, parameters: 1 },
+      FunctionExpression: { body: 1, parameters: 1 },
+      ignoreComments: false,
+      ignoredNodes: [
+        "TSUnionType",
+        "TSIntersectionType",
+        "TSTypeParameterInstantiation",
+        "FunctionExpression > .params[decorators.length > 0]",
+        "FunctionExpression > .params > :matches(Decorator, :not(:first-child))"
+      ],
+      ImportDeclaration: 1,
+      MemberExpression: 1,
+      ObjectExpression: 1,
+      offsetTernaryExpressions: false,
+      outerIIFEBody: 1,
+      SwitchCase: 1,
+      tabLength: 2,
+      VariableDeclarator: 1
+    }],
     "style/lines-between-class-members": "off",
     "style/max-statements-per-line": "off",
     "style/operator-linebreak": ["error", "after"],
@@ -73,6 +99,7 @@ export default antfu({
     "ts/array-type": "error",
     "ts/consistent-indexed-object-style": "error",
     "ts/consistent-type-definitions": "off",
+    "ts/member-ordering": ["error", { default: { optionalityOrder: "required-first" } }],
     "ts/no-shadow": "error",
     "unicorn/prefer-includes": "off",
     "yaml/quotes": ["error", { prefer: "double" }]
