@@ -11,23 +11,20 @@ export const ss220Links: Link[] = [
 export const ss220Servers: ServerInfo[] = [
   {
     name: "Green",
-    build: "SS220-Paradise",
-    map: "Box Station (Cyberiad)",
-    mapUrl: "https://webmap.affectedarc07.co.uk/maps/ss220/deltastation",
+    build: "Paradise",
+    map: "Box Station (Cyberiad)\nDeltaStation (Kerberos)\nMetaStation (Cerebron)",
     url: "byond://s1.ss220.club:4002"
   },
   {
     name: "Black",
-    build: "SS220-Paradise",
-    map: "Box Station (Cyberiad)",
-    mapUrl: "https://webmap.affectedarc07.co.uk/maps/ss220/boxstation",
+    build: "Paradise",
+    map: "Box Station (Cyberiad)\nDeltaStation (Kerberos)\nMetaStation (Cerebron)",
     url: "byond://s1.ss220.club:4000"
   },
   {
     name: "Prime",
-    build: "SS220-Paradise",
-    map: "Box Station (Cyberiad)",
-    mapUrl: "https://webmap.affectedarc07.co.uk/maps/ss220/boxstation",
+    build: "Paradise",
+    map: "Box Station (Cyberiad)\nDeltaStation (Kerberos)\nMetaStation (Cerebron)",
     url: "byond://s1.ss220.club:4001"
   }
 ];

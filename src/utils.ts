@@ -6,15 +6,9 @@ export function pluralize(number: number, titles: string[]) {
 
 export function getBuildEmoji(build: string): string {
   switch (build.toLowerCase()) {
-    case "paradise":
-      return "🌴";
-    case "infinity":
-      return "♾️";
-    case "beestation":
-      return "🐝";
-    case "tgmc":
-      return "👨‍🚀";
-    default:
-      return "";
+    case "paradise": return "🌴";
+    case "infinity": return "♾️";
+    case "beestation": return "🐝";
+    default: return "";
   }
 }

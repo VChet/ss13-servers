@@ -104,6 +104,9 @@
       font-size: 16px;
       line-height: 26px;
       color: #cacaca;
+      &-mode {
+        white-space: pre-line;
+      }
     }
     &__description {
       font-size: 16px;
