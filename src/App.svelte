@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { onyxLinks, onyxServers } from "@/servers/onyx";
   import { ss220Links, ss220Servers } from "@/servers/ss220";
   import { tauLinks, tauServers } from "@/servers/tauCeti";
   import type { Link } from "@/types/link";
@@ -33,11 +32,6 @@
     name="Tau Ceti"
     links={tauLinks}
     servers={tauServers}
-  />
-  <Community
-    name="Chaotic Onyx"
-    links={onyxLinks}
-    servers={onyxServers}
   />
   <section class="card info">
     <ul class="info__buttons">
