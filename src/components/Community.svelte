@@ -11,7 +11,7 @@
     servers?: ServerInfo[]
   }
 
-  let {
+  const {
     name,
     description = null,
     links = [],
