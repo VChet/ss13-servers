@@ -11,7 +11,7 @@
   }
   let { data = $bindable() }: Props = $props();
 
-  let fetchFn = $derived.by(() => data.url.includes("tauceti") ? fetchTauData : null);
+  const fetchFn = $derived(data.url.includes("tauceti") ? fetchTauData : null);
 
   async function fetchTauData() {
     const response = await fetchTauServer(data.name);

@@ -16,7 +16,7 @@
     icon?: LinkIcon | null
   }
 
-  let { href, icon = null, children }: Props = $props();
+  const { href, icon = null, children }: Props = $props();
 </script>
 
 <a class="button" {href} target="_blank" rel="noopener noreferrer">
