@@ -10,10 +10,10 @@ export const ss220Links: Link[] = [
 
 export const ss220Servers: ServerInfo[] = [
   {
-    name: "Black",
-    description: "Тестовый сервер",
-    build: "Paradise",
-    url: "byond://s4.ss220.club:4000"
+    name: "Main",
+    description: "Основной сервер",
+    build: "/tg/",
+    url: "byond://s4.ss220.club:2200"
   },
   {
     name: "Green",
@@ -22,7 +22,19 @@ export const ss220Servers: ServerInfo[] = [
     url: "byond://s1.ss220.club:4002"
   },
   {
-    name: "Prime",
+    name: "Black",
+    description: "Тестовый сервер",
+    build: "Paradise",
+    url: "byond://s4.ss220.club:4000"
+  },
+  {
+    name: "Prime Paradise",
+    description: "Сервер с вайтлистом для стримеров",
+    build: "Paradise",
+    url: "byond://s1.ss220.club:4001"
+  },
+  {
+    name: "Prime TG",
     description: "Сервер с вайтлистом для стримеров",
     build: "/tg/",
     url: "byond://116.202.156.155:3254"
