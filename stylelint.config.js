@@ -5,25 +5,19 @@ export default {
   ],
   plugins: [
     "@stylistic/stylelint-plugin",
-    "stylelint-order",
-    "stylelint-declaration-block-no-ignored-properties"
+    "stylelint-declaration-block-no-ignored-properties",
+    "stylelint-order"
   ],
   customSyntax: "postcss-scss",
-  overrides: [
-    {
-      files: ["**/*.svelte"],
-      customSyntax: "postcss-html"
-    }
-  ],
-  ignoreFiles: [
-    "dist/**/*css"
-  ],
+  overrides: [{ files: ["**/*.svelte"], customSyntax: "postcss-html" }],
+  ignoreFiles: ["dist"],
   rules: {
     "@stylistic/color-hex-case": "lower",
+    "@stylistic/number-leading-zero": "always",
     "at-rule-empty-line-before": "never",
     "declaration-empty-line-before": "never",
+    "plugin/declaration-block-no-ignored-properties": true,
     "rule-empty-line-before": "never",
-    "selector-class-pattern": "[a-z]([a-z-]+)?(__([a-z]+-?)+)?(--([a-z]+-?)+){0,2}",
-    "selector-pseudo-class-no-unknown": [true, { ignorePseudoClasses: ["global"] }]
+    "selector-class-pattern": "[a-z]([a-z-]+)?(__([a-z]+-?)+)?(--([a-z]+-?)+){0,2}"
   }
 };
