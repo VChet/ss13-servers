@@ -45,13 +45,6 @@
 </main>
 
 <style lang="scss">
-  :global(.card) {
-    padding: 20px;
-    margin: 15px 0;
-    background-color: #16161ce6;
-    border: 1px solid #31313b;
-    border-radius: 4px;
-  }
   .header {
     display: grid;
     grid-template-columns: 1fr auto auto;

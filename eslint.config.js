@@ -1,15 +1,25 @@
 import process from "node:process";
 import antfu from "@antfu/eslint-config";
 
-const SORT_IMPORT_CUSTOM_GROUP = {
-  "svelte": "^svelte$",
-  "svelte-components": "\\.svelte$"
-};
+const SORT_IMPORT_CUSTOM_GROUPS = [{
+  groupName: "svelte",
+  anyOf: [
+    { selector: "type", elementNamePattern: "^svelte$" },
+    { elementNamePattern: "^svelte$" }
+  ]
+}, {
+  groupName: "svelte-components",
+  anyOf: [
+    { selector: "type", elementNamePattern: "\\.svelte$" },
+    { elementNamePattern: "\\.svelte$" }
+  ]
+}];
 
 export default antfu({
   toml: false,
   svelte: true,
-  isInEditor: false,
+  isInEditor: false
+}, {
   rules: {
     "antfu/consistent-list-newline": "off",
     "antfu/if-newline": "off",
@@ -36,29 +46,27 @@ export default antfu({
     "perfectionist/sort-named-imports": ["error", {
       order: "asc",
       type: "natural",
-      groupKind: "values-first"
+      groups: ["value-import", "type-import"]
     }],
     "perfectionist/sort-imports": ["error", {
       internalPattern: ["^@/"],
       groups: [
-        "builtin",
+        "value-builtin",
         "svelte",
-        "external",
-        "type",
-        "internal",
-        ["parent", "sibling", "index"],
-        "internal-type",
-        ["parent-type", "sibling-type", "index-type"],
+        "value-external",
+        "type-import",
+        "value-internal",
+        ["value-parent", "value-sibling", "value-index"],
+        "type-internal",
+        ["type-parent", "type-sibling", "type-index"],
         "side-effect",
         "svelte-components",
-        "object",
+        "ts-equals-import",
         "unknown"
       ],
-      customGroups: {
-        value: SORT_IMPORT_CUSTOM_GROUP,
-        type: SORT_IMPORT_CUSTOM_GROUP
-      },
-      newlinesBetween: "ignore",
+      customGroups: SORT_IMPORT_CUSTOM_GROUPS,
+      newlinesBetween: 0,
+      newlinesInside: 0,
       order: "asc",
       type: "natural"
     }],
@@ -95,7 +103,6 @@ export default antfu({
     "style/operator-linebreak": ["error", "after"],
     "style/quotes": ["error", "double"],
     "style/semi": ["error", "always"],
-    "svelte/html-quotes": ["error", { prefer: "double" }],
     "ts/array-type": "error",
     "ts/consistent-indexed-object-style": "error",
     "ts/consistent-type-definitions": "off",
@@ -103,5 +110,15 @@ export default antfu({
     "ts/no-shadow": "error",
     "unicorn/prefer-includes": "off",
     "yaml/quotes": ["error", { prefer: "double" }]
+  }
+}, {
+  files: ["**/*.svelte"],
+  rules: {
+    "svelte/html-quotes": ["error", { prefer: "double" }]
+  }
+}, {
+  files: ["**/*.md"],
+  rules: {
+    "perfectionist/sort-imports": "off"
   }
 });
