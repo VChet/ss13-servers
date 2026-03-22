@@ -24,14 +24,14 @@
 </script>
 
 <li class="server">
-  <h3 class="server__name">{data.name}</h3>
+  <h3 class="name">{data.name}</h3>
   {#if fetchFn}
-    <button class="button server__update" onclick={fetchTauData}>
+    <button class="button update" onclick={fetchTauData}>
       <IconRefresh />
     </button>
   {/if}
   {#if data.build}
-    <div class="server__build" title="Билд">
+    <div class="build" title="Билд">
       {getBuildEmoji(data.build)}
       {data.build}
     </div>
@@ -46,7 +46,7 @@
         {/each}
       {/if}
       {#if data.map || data.mode}
-        <div class="server__data-mode" title="Карта">
+        <div class="mode" title="Карта">
           {#if data.map}
             {#if data.mapUrl}
               <a href={data.mapUrl} target="_blank" rel="noopener noreferrer">
@@ -72,52 +72,52 @@
     {/if}
   </div>
   {#if data.description}
-    <div class="server__description">
+    <div class="description">
       {data.description}
     </div>
   {/if}
-  <a class="button server__play" title={data.url} href={data.url} rel="noopener">Играть</a>
+  <a class="button play" title={data.url} href={data.url} rel="noopener">Играть</a>
 </li>
 
-<style lang="scss">
-  .server {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 20px;
-    text-align: center;
-    background-color: #1d1d24e1;
-    border: 1px solid #31313b;
-    border-radius: 4px;
-    &__name {
-      margin: 0;
-    }
-    &__update {
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-    &__data {
-      font-size: 16px;
-      line-height: 26px;
-      color: #cacaca;
-      &-mode {
-        white-space: pre-line;
-      }
-    }
-    &__description {
-      font-size: 16px;
-      color: #cacaca;
-    }
-    &__play {
-      display: block;
-      width: 100%;
-      max-width: 150px;
-      margin-top: 15px;
-      border: 1px solid #466e6e;
+<style>
+.server {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  text-align: center;
+  background-color: #1d1d24e1;
+  border: 1px solid #31313b;
+  border-radius: 4px;
+  .name {
+    margin: 0;
+  }
+  .update {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .data {
+    font-size: 16px;
+    line-height: 26px;
+    color: #cacaca;
+    .mode {
+      white-space: pre-line;
     }
   }
+  .description {
+    font-size: 16px;
+    color: #cacaca;
+  }
+  .play {
+    display: block;
+    width: 100%;
+    max-width: 150px;
+    margin-top: 15px;
+    border: 1px solid #466e6e;
+  }
+}
 </style>

@@ -34,7 +34,7 @@
     servers={tauServers}
   />
   <section class="card info">
-    <ul class="info__buttons">
+    <ul class="buttons">
       {#each infoLinks as { url, icon, text }}
         <li>
           <ExternalLink href={url} {icon}>{text}</ExternalLink>
@@ -44,26 +44,26 @@
   </section>
 </main>
 
-<style lang="scss">
-  .header {
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    gap: 10px;
-    align-items: center;
-    @media (width <= 425px) {
-      grid-template-columns: 1fr;
-    }
+<style>
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 10px;
+  align-items: center;
+  @media (width <= 425px) {
+    grid-template-columns: 1fr;
   }
-  .info {
+}
+.info {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  .buttons {
     display: flex;
-    flex-flow: row wrap;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
     justify-content: center;
-    &__buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: center;
-      justify-content: center;
-    }
   }
+}
 </style>

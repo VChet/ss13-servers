@@ -1,6 +1,6 @@
 export default {
   extends: [
-    "stylelint-config-standard-scss",
+    "stylelint-config-standard",
     "@stylistic/stylelint-config",
     "stylelint-config-recess-order"
   ],
@@ -8,9 +8,8 @@ export default {
     "stylelint-declaration-block-no-ignored-properties",
     "stylelint-order"
   ],
-  customSyntax: "postcss-scss",
   overrides: [{ files: ["**/*.svelte"], customSyntax: "postcss-html" }],
-  ignoreFiles: ["dist"],
+  ignoreFiles: ["dist/**"],
   rules: {
     "@stylistic/selector-list-comma-newline-after": "always-multi-line",
     "at-rule-empty-line-before": "never",
