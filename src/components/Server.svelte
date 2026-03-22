@@ -36,10 +36,8 @@
       {data.build}
     </div>
   {/if}
-  <div class="server__data">
-    {#if data.error}
-      NO DATA
-    {:else}
+  <div class="data">
+    {#if !data.error}
       {#if data.buttons?.length}
         {#each data.buttons as { url, icon, text }}
           <ExternalLink href={url} {icon}>{text}</ExternalLink>
