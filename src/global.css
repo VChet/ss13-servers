@@ -94,3 +94,6 @@ a {
   border: 1px solid #31313b;
   border-radius: 4px;
 }
+.tabler-icon {
+  flex-shrink: 0;
+}

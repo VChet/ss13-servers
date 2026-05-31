@@ -1,13 +1,8 @@
 <script lang="ts">
   import { ss220Links, ss220Servers } from "@/servers/ss220";
   import { tauLinks, tauServers } from "@/servers/tauCeti";
-  import type { Link } from "@/types/link";
   import Community from "./components/Community.svelte";
   import ExternalLink from "./components/ExternalLink.svelte";
-
-  const infoLinks: Link[] = [
-    { text: "WebMap", icon: "map", url: "https://webmap.affectedarc07.co.uk" }
-  ];
 
   const updateTimestamp = import.meta.env.VITE_SERVERS_UPDATE;
   const date = new Date(updateTimestamp).toLocaleDateString("ru-RU", { day: "numeric", month: "numeric", year: "numeric" });
@@ -17,8 +12,9 @@
 <main class="container">
   <header class="header">
     <h1>Space Station 13 RU Servers</h1>
-    <ExternalLink href="https://www.byond.com/download/">BYOND</ExternalLink>
-    <ExternalLink href="https://store.steampowered.com/app/1255460/Space_Station_14/">SS14</ExternalLink>
+    <ExternalLink href="https://webmap.affectedarc07.co.uk" icon="map">WebMap</ExternalLink>
+    <ExternalLink href="https://www.byond.com/download" icon="byond">BYOND</ExternalLink>
+    <ExternalLink href="https://store.steampowered.com/app/1255460/Space_Station_14" icon="steam">SS14</ExternalLink>
   </header>
   <div>Last update: {date}</div>
   <Community
@@ -32,37 +28,16 @@
     links={tauLinks}
     servers={tauServers}
   />
-  <section class="card info">
-    <ul class="buttons">
-      {#each infoLinks as { url, icon, text } (url)}
-        <li>
-          <ExternalLink href={url} {icon}>{text}</ExternalLink>
-        </li>
-      {/each}
-    </ul>
-  </section>
 </main>
 
 <style>
 .header {
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 1fr repeat(3, auto);
   gap: 10px;
   align-items: center;
-  @media (width <= 425px) {
+  @media (width <= 768px) {
     grid-template-columns: 1fr;
-  }
-}
-.info {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  .buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    align-items: center;
-    justify-content: center;
   }
 }
 </style>
