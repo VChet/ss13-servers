@@ -2,41 +2,38 @@ import type { Link } from "@/types/link";
 import type { ServerInfo } from "@/types/server";
 
 export const ss220Links: Link[] = [
-  { text: "Discord", icon: "discord", url: "https://discord.gg/ss220" },
-  { text: "Правила ", icon: "rules", url: "https://bs.ss220.club/index.php/Правила" },
-  { text: "Вики", icon: "wiki", url: "https://bs.ss220.club" },
-  { text: "Вики Prime", icon: "wiki", url: "https://wiki.ss220.club/index.php/Раздел_Prime_сервера" }
+  { text: "Discord", icon: "discord", url: "https://discord.gg/ss220" }
 ];
 
 export const ss220Servers: ServerInfo[] = [
   {
-    name: "Main",
+    name: "Paradise",
     description: "Основной сервер",
+    build: "Paradise",
+    url: "byond://paradise.ss13.ss220.club:4000",
+    buttons: [
+      { text: "Вики", icon: "wiki", url: "https://wiki.ss220.club/index.php" },
+      { text: "Правила", icon: "rules", url: "https://wiki.ss220.club/index.php/Правила_Сервера" }
+    ]
+  },
+  {
+    name: "BandaStation",
+    description: "Весёлые раунды с кучей различных возможностей и максимальной свободой действий",
     build: "/tg/",
-    url: "byond://s4.ss220.club:2200"
+    url: "byond://bandastation.ss13.ss220.club:2200",
+    buttons: [
+      { text: "Вики", icon: "wiki", url: "https://bs.ss220.club/index.php" },
+      { text: "Правила", icon: "rules", url: "https://bs.ss220.club/index.php/Правила" }
+    ]
   },
   {
-    name: "Green",
-    description: "Стабильный сервер",
-    build: "Paradise",
-    url: "byond://s1.ss220.club:4002"
-  },
-  {
-    name: "Black",
-    description: "Тестовый сервер",
-    build: "Paradise",
-    url: "byond://s4.ss220.club:4000"
-  },
-  {
-    name: "Prime Paradise",
+    name: "Prime",
     description: "Сервер с вайтлистом для стримеров",
     build: "Paradise",
-    url: "byond://s1.ss220.club:4001"
-  },
-  {
-    name: "Prime TG",
-    description: "Сервер с вайтлистом для стримеров",
-    build: "/tg/",
-    url: "byond://116.202.156.155:3254"
+    url: "byond://prime.ss13.ss220.club:3254",
+    buttons: [
+      { text: "Вики", icon: "wiki", url: "https://wiki.ss220.club/index.php/Раздел_Prime_сервера" },
+      { text: "Правила", icon: "rules", url: "https://wiki.ss220.club/index.php/Prime_Portal/Правила_сервера" }
+    ]
   }
 ];

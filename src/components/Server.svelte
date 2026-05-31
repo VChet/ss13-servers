@@ -39,9 +39,13 @@
   <div class="data">
     {#if !data.error}
       {#if data.buttons?.length}
-        {#each data.buttons as { url, icon, text } (url)}
-          <ExternalLink href={url} {icon}>{text}</ExternalLink>
-        {/each}
+        <ul class="buttons">
+          {#each data.buttons as { url, icon, text } (url)}
+            <li>
+              <ExternalLink href={url} {icon}>{text}</ExternalLink>
+            </li>
+          {/each}
+        </ul>
       {/if}
       {#if data.map || data.mode}
         <div class="mode" title="Карта">
@@ -97,11 +101,19 @@
     position: absolute;
     top: 0;
     right: 0;
+    border-radius: 0 4px;
   }
   .data {
     font-size: 16px;
     line-height: 26px;
     color: #cacaca;
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+    }
     .mode {
       white-space: pre-line;
     }
