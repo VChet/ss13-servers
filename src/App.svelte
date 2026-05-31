@@ -35,7 +35,7 @@
   />
   <section class="card info">
     <ul class="buttons">
-      {#each infoLinks as { url, icon, text }}
+      {#each infoLinks as { url, icon, text } (url)}
         <li>
           <ExternalLink href={url} {icon}>{text}</ExternalLink>
         </li>

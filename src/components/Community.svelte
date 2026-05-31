@@ -25,14 +25,14 @@
     <p>{description}</p>
   {/if}
   <ul class="buttons">
-    {#each links as { url, icon, text }}
+    {#each links as { url, icon, text } (url)}
       <li>
         <ExternalLink href={url} {icon}>{text}</ExternalLink>
       </li>
     {/each}
   </ul>
   <ul class="servers">
-    {#each servers as data}
+    {#each servers as data (data.url)}
       <Server {data} />
     {/each}
   </ul>

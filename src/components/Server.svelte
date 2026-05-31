@@ -39,7 +39,7 @@
   <div class="data">
     {#if !data.error}
       {#if data.buttons?.length}
-        {#each data.buttons as { url, icon, text }}
+        {#each data.buttons as { url, icon, text } (url)}
           <ExternalLink href={url} {icon}>{text}</ExternalLink>
         {/each}
       {/if}

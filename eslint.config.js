@@ -116,9 +116,4 @@ export default antfu({
   rules: {
     "svelte/html-quotes": ["error", { prefer: "double" }]
   }
-}, {
-  files: ["**/*.md"],
-  rules: {
-    "perfectionist/sort-imports": "off"
-  }
 });
