@@ -13,6 +13,7 @@ export default {
   rules: {
     "@stylistic/selector-list-comma-newline-after": "always-multi-line",
     "at-rule-empty-line-before": "never",
+    "custom-property-empty-line-before": "never",
     "declaration-empty-line-before": "never",
     "plugin/declaration-block-no-ignored-properties": true,
     "rule-empty-line-before": "never",

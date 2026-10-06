@@ -1,0 +1,11 @@
+minimumReleaseAge: 0
+minimumReleaseAgeExcludePrune: true
+
+trustPolicy: no-downgrade
+trustPolicyExclude:
+  - chokidar@4.0.3
+
+ignoreScripts: true
+shellEmulator: true
+pmOnFail: ignore
+packages: [.]
