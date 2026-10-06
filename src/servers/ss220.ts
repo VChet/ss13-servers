@@ -7,16 +7,6 @@ export const ss220Links: Link[] = [
 
 export const ss220Servers: ServerInfo[] = [
   {
-    name: "Paradise",
-    description: "Основной сервер",
-    build: "Paradise",
-    url: "byond://paradise.ss13.ss220.club:4000",
-    buttons: [
-      { text: "Вики", icon: "wiki", url: "https://wiki.ss220.club/index.php" },
-      { text: "Правила", icon: "rules", url: "https://wiki.ss220.club/index.php/Правила_Сервера" }
-    ]
-  },
-  {
     name: "BandaStation",
     description: "Весёлые раунды с кучей различных возможностей и максимальной свободой действий",
     build: "/tg/",
